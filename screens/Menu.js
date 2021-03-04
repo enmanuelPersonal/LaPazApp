@@ -9,7 +9,7 @@ export const Menu = ({ navigation }) => {
   const initState = {
     inicio: false,
     inscripcion: false,
-    mensualidad: false,
+    cuotas: false,
     carrito: false,
   };
   const [state, setstate] = useState({ ...initState, inicio: true });
@@ -34,13 +34,13 @@ export const Menu = ({ navigation }) => {
           />
           <Text>inscripcion</Text>
         </Button>
-        <Button vertical onPress={() => Tap("mensualidad")}>
+        <Button vertical onPress={() => Tap("cuotas")}>
           <IconStripe
             name="cc-stripe"
             size={30}
-            color={state.mensualidad ? "#000" : "#fff"}
+            color={state.cuotas ? "#000" : "#fff"}
           />
-          <Text>mensualidad</Text>
+          <Text>cuotas</Text>
         </Button>
         <Button vertical onPress={() => Tap("carrito")}>
           <IconAntDesign

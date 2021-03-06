@@ -1,8 +1,6 @@
-import dotenv from "dotenv";
 import { cache } from "../utils/cache";
-dotenv.config();
 
-const REACT_APP_API_URL = "https://qa-lapaz-back-end.herokuapp.com";
+const REACT_APP_API_URL = "https://qa-lapaz-back-end.herokuapp.com/";
 
 export const get = async (url) => {
   const token = await cache.get("LaPaz_auth_token");

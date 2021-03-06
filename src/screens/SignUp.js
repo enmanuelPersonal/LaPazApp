@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Alert } from "react-native";
 import {
   Container,
   Button,
@@ -17,6 +17,8 @@ import { useNavigation } from "@react-navigation/native";
 import globalStyles from "../styles/global";
 import { isValidateForm } from "../helpers/isValidateForm";
 import { ShowAlert } from "../components/Alert";
+import { formatDate } from "../helpers/formatDate";
+import { post } from "../helpers/fetch";
 
 export const SignUp = () => {
   const { register, handleSubmit, setValue } = useForm();
@@ -38,16 +40,36 @@ export const SignUp = () => {
 
   // Cuando el usuario presiona en crear cuenta
   const onSubmit = async (data) => {
-    const { nombre, usuario, password, CFoassword } = data;
-    // console.log('object')
-    // await cache.set("hello", "world");
-    // const value = await cache.get("hello");
-    // console.log("Aqui el valor: ",value);
+    const { nombre, usuario, password, CFpassword } = data;
+    const userData = {};
+    Object.assign(
+      userData,
+      { nombre },
+      { usuario },
+      { password },
+      { nacimiento: formatDate("02/12/1999") }
+    );
 
     if (!isValidateForm(data)) {
       ShowAlert({ title: "Error", msj: "Todos los campos son obligatorios" });
-    } else if (password !== CFoassword) {
+    } else if (password !== CFpassword) {
       ShowAlert({ title: "Error", msj: "las contraseñas deben coincidir" });
+    } else {
+      return post("user/add", userData)
+        .then(async (response) => {
+          if (response.status === 201) {
+            Alert.alert(
+              "Correcto!",
+              "Usuario registrado correctamente",
+              [{ text: "OK", onPress: () => navigation.navigate("login") }],
+              { cancelable: false }
+            );
+          } else {
+            const res = await response.json();
+            ShowAlert({ title: "Error", msj: res.message });
+          }
+        })
+        .catch((err) => ShowAlert({ title: "Error", msj: err.message }));
     }
   };
 

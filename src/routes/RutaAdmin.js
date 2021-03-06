@@ -10,7 +10,7 @@ export const RutaAdmin = ({ navigation }) => {
   return (
     <>
       <Stack.Navigator
-        initialRouteName={"Home"}
+        initialRouteName={"inicio"}
         screenOptions={{
           headerTitleAlign: "center",
           headerTitleStyle: {

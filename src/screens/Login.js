@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { View, StyleSheet } from "react-native";
 import {
   Container,
@@ -14,16 +14,62 @@ import { useNavigation } from "@react-navigation/native";
 
 import globalStyles from "../styles/global";
 import { ShowAlert } from "../components/Alert";
+import AppContext from "../auth/AuthContext";
+import { post } from "../helpers/fetch";
+import { cache } from "../utils/cache";
+import { USER_LOGIN } from "../auth/actions";
 
 export const Login = () => {
-  const [email, guardarEmail] = useState("");
+  const { dispatch } = useContext(AppContext);
+  const [usuario, guardarUsuario] = useState("");
   const [password, guardarPassword] = useState("");
 
   const navigation = useNavigation();
 
   const handleSubmit = async () => {
-    if (email === "" || password === "") {
+    const userData = {};
+    Object.assign(userData, { usuario }, { password });
+    if (usuario === "" || password === "") {
       ShowAlert({ title: "Error", msj: "Todos los campos son obligatorios" });
+    } else {
+      console.log(userData);
+      return post("auth/login", userData)
+        .then((response) => {
+          console.log("Response: ", response);
+          switch (response.status) {
+            case 200:
+              return response.json();
+            case 401:
+              throw Error("Credenciales inválidas");
+            case 404:
+              throw Error("Usuario invalido");
+            default:
+              throw Error("Error en el servidor");
+          }
+        })
+        .then(async ({ login, token, ...payload }) => {
+          const { tipoUsuario, idEntidad, nombre, permisos } = payload.data;
+          await cache.set("LaPaz_auth_token", token);
+
+          if (!login) {
+            ShowAlert({ title: "Error", msj: "No puede iniciar sesion" });
+            return;
+          } else {
+            dispatch({
+              type: USER_LOGIN,
+              payload: {
+                tipoUsuario,
+                idEntidad,
+                nombre,
+                permisos,
+              },
+            });
+            navigation.navigate("ruta/carrito");
+          }
+        })
+        .catch((err) => {
+          ShowAlert({ title: "Error", msj: err.message });
+        });
     }
   };
 
@@ -35,10 +81,9 @@ export const Login = () => {
         <Form>
           <Item inlineLabel last style={globalStyles.input}>
             <Input
-              autoCompleteType="email"
               placeholder="Email"
-              onChangeText={(texto) => guardarEmail(texto)}
-              value={email}
+              onChangeText={(texto) => guardarUsuario(texto)}
+              value={usuario}
             />
           </Item>
           <Item inlineLabel last style={globalStyles.input}>

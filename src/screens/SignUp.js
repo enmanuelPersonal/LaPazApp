@@ -39,6 +39,10 @@ export const SignUp = () => {
   // Cuando el usuario presiona en crear cuenta
   const onSubmit = async (data) => {
     const { nombre, usuario, password, CFoassword } = data;
+    // console.log('object')
+    // await cache.set("hello", "world");
+    // const value = await cache.get("hello");
+    // console.log("Aqui el valor: ",value);
 
     if (!isValidateForm(data)) {
       ShowAlert({ title: "Error", msj: "Todos los campos son obligatorios" });

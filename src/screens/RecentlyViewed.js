@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 
-import { COLORS, FONTS, SIZES } from "../constants";
+import { COLORS, FONTS, SIZES } from "../../constants";
 
 export const RecentlyViewed = ({
   item,

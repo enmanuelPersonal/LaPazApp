@@ -1,16 +1,10 @@
 import React from "react";
-import { Image, TouchableOpacity } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 
-// screens
-import { Home } from "./screens/";
-
-import { images, icons, COLORS, FONTS, SIZES } from "./constants";
-import { Menu } from "./screens/Menu";
-import { Carrito } from "./screens/Carrito";
-import { RutaAdmin } from "./screens/RutaAdmin";
-import { Login } from "./screens/Login";
+import { RutaAdmin } from "./src/routes/RutaAdmin";
+import { Login } from "./src/screens/Login";
+import { SignUp } from "./src/screens/SignUp";
 
 const theme = {
   ...DefaultTheme,
@@ -25,9 +19,7 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer theme={theme}>
-      <Stack.Navigator 
-       initialRouteName={"login"}
-       >
+      <Stack.Navigator initialRouteName={"login"}>
         <Stack.Screen
           name="login"
           component={Login}
@@ -35,19 +27,14 @@ const App = () => {
             headerShown: false,
           }}
         />
-        {/* <Stack.Screen
-          name="carrito"
-          component={Carrito}
+        <Stack.Screen
+          name="signUp"
+          component={SignUp}
           options={{
-            title: "Carrito",
-            headerTintColor: COLORS.lightGray,
-            headerTitleStyle: {
-              ...FONTS.navTitle,
-              textAlign: "center",
-            },
+            headerShown: false,
           }}
-        /> */}
-         <Stack.Screen
+        />
+        <Stack.Screen
           name="ruta"
           component={RutaAdmin}
           options={{
@@ -55,7 +42,6 @@ const App = () => {
           }}
         />
       </Stack.Navigator>
-      {/* <Menu /> */}
     </NavigationContainer>
   );
 };

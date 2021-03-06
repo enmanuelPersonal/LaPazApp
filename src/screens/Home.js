@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, View, Text, FlatList } from "react-native";
 
-import { images, COLORS, FONTS, SIZES } from "../constants";
+import { images, COLORS, FONTS, SIZES } from "../../constants";
 import TrendingShoes from "./TrendingShoes";
 import { RecentlyViewed } from "./RecentlyViewed";
 import { ModalDetail } from "./ModalDetail";

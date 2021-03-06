@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { BlurView } from "@react-native-community/blur";
 
-import { COLORS, FONTS, SIZES } from "../constants";
+import { COLORS, FONTS, SIZES } from "../../constants";
 
 export const ModalDetail = ({
   showAddToBagModal,

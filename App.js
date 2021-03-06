@@ -1,13 +1,14 @@
 import React, { useEffect, useReducer, useState } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
-// import { useNavigation } from "@react-navigation/native";
 
 import { RutaAdmin } from "./src/routes/RutaAdmin";
 import { Login } from "./src/screens/Login";
 import { SignUp } from "./src/screens/SignUp";
 import AppContext from "./src/auth/AuthContext";
 import reducer from "./src/auth/authReducer";
+import { post } from "./src/helpers/fetch";
+import { USER_LOGIN } from "./src/auth/actions";
 
 const theme = {
   ...DefaultTheme,
@@ -26,10 +27,7 @@ const Stack = createStackNavigator();
 
 const App = () => {
   const [loading, setLoading] = useState(true);
-  const [loggedIn, setLoggedIn] = useState(false);
   const [state, dispatch] = useReducer(reducer, initialState);
-
-  // const navigation = useNavigation();
 
   useEffect(() => {
     const fetchAuthData = async () => {
@@ -37,7 +35,6 @@ const App = () => {
         .then((res) => res.json())
         .catch(() => {
           setLoading(false);
-          setLoggedIn(false);
         });
 
       if (getUser) {
@@ -47,7 +44,6 @@ const App = () => {
             type: USER_LOGIN,
             payload: data,
           });
-          setLoggedIn(true);
         }
       }
       setLoading(false);

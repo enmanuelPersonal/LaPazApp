@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { View, StyleSheet } from "react-native";
 import {
   Container,
@@ -20,11 +20,19 @@ import { cache } from "../utils/cache";
 import { USER_LOGIN } from "../auth/actions";
 
 export const Login = () => {
-  const { dispatch } = useContext(AppContext);
+  const { dispatch, state:{
+    isUserLoggedIn
+  } } = useContext(AppContext);
   const [usuario, guardarUsuario] = useState("");
   const [password, guardarPassword] = useState("");
 
   const navigation = useNavigation();
+
+  useEffect(() => {
+   if(isUserLoggedIn){
+    navigation.navigate("ruta", { screen: "Home" });
+   }
+  }, [isUserLoggedIn])
 
   const handleSubmit = async () => {
     const userData = {};
@@ -32,10 +40,8 @@ export const Login = () => {
     if (usuario === "" || password === "") {
       ShowAlert({ title: "Error", msj: "Todos los campos son obligatorios" });
     } else {
-      console.log(userData);
       return post("auth/login", userData)
         .then((response) => {
-          console.log("Response: ", response);
           switch (response.status) {
             case 200:
               return response.json();
@@ -64,7 +70,7 @@ export const Login = () => {
                 permisos,
               },
             });
-            navigation.navigate("ruta/carrito");
+            navigation.navigate("ruta", { screen: "Home" });
           }
         })
         .catch((err) => {

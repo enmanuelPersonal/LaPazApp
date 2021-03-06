@@ -87,7 +87,7 @@ export const Login = () => {
         <Form>
           <Item inlineLabel last style={globalStyles.input}>
             <Input
-              placeholder="Email"
+              placeholder="Usuario"
               onChangeText={(texto) => guardarUsuario(texto)}
               value={usuario}
             />

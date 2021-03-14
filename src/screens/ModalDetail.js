@@ -18,6 +18,7 @@ export const ModalDetail = ({
   setShowAddToBagModal,
   selectedItem,
   selectedSize,
+  bgColor
 }) => {
   function showSize() {
     console.log("Hola");
@@ -89,7 +90,7 @@ export const ModalDetail = ({
           style={{
             justifyContent: "center",
             width: "85%",
-            backgroundColor: selectedItem.bgColor,
+            backgroundColor: '#DADCDF',
             height: "100%",
           }}
         >
@@ -160,7 +161,7 @@ export const ModalDetail = ({
               }}
             >
               {/* Mostrar los size */}
-              {showSize()}
+              {/* {showSize()} */}
             </View>
           </View>
 

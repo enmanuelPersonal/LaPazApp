@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { StyleSheet } from "react-native";
 import { Footer, FooterTab, Button, Text } from "native-base";
 
 import Icon from "react-native-vector-icons/Entypo";
@@ -21,36 +22,75 @@ export const Menu = ({ navigation }) => {
 
   return (
     <Footer>
-      <FooterTab style={{ backgroundColor: "#1E5DE3" }}>
+      <FooterTab style={{ backgroundColor: "#FAFBFD" }}>
         <Button vertical onPress={() => Tap("inicio")}>
-          <Icon name="shop" size={30} color={state.inicio ? "#000" : "#fff"} />
-          <Text>inicio</Text>
+          <Icon
+            name="shop"
+            size={30}
+            color={state.inicio ? "#000" : "#A1A2A3"}
+          />
+          <Text
+            style={[
+              styles.text,
+              state.inicio ? { color: "#000" } : { color: "#A1A2A3" },
+            ]}
+          >
+            inicio
+          </Text>
         </Button>
         <Button vertical onPress={() => Tap("inscripcion")}>
           <IconAntDesign
             name="filetext1"
             size={30}
-            color={state.inscripcion ? "#000" : "#fff"}
+            color={state.inscripcion ? "#000" : "#A1A2A3"}
           />
-          <Text>inscripcion</Text>
+          <Text
+            style={[
+              styles.text,
+              state.inscripcion ? { color: "#000" } : { color: "#A1A2A3" },
+            ]}
+          >
+            inscripcion
+          </Text>
         </Button>
         <Button vertical onPress={() => Tap("cuotas")}>
           <IconStripe
             name="cc-stripe"
             size={30}
-            color={state.cuotas ? "#000" : "#fff"}
+            color={state.cuotas ? "#000" : "#A1A2A3"}
           />
-          <Text>cuotas</Text>
+          <Text
+            style={[
+              styles.text,
+              state.cuotas ? { color: "#000" } : { color: "#A1A2A3" },
+            ]}
+          >
+            cuotas
+          </Text>
         </Button>
         <Button vertical onPress={() => Tap("carrito")}>
           <IconAntDesign
             name="shoppingcart"
             size={30}
-            color={state.carrito ? "#000" : "#fff"}
+            color={state.carrito ? "#000" : "#A1A2A3"}
           />
-          <Text>carrito</Text>
+          <Text
+            style={[
+              styles.text,
+              state.carrito ? { color: "#000" } : { color: "#A1A2A3" },
+            ]}
+          >
+            carrito
+          </Text>
         </Button>
       </FooterTab>
     </Footer>
   );
 };
+
+const styles = StyleSheet.create({
+  text: {
+    fontWeight: "bold",
+    fontSize: 12,
+  },
+});

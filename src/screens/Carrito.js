@@ -1,17 +1,24 @@
-import React, {useState} from "react";
-import { StyleSheet, View, Text, FlatList, ScrollView } from "react-native";
+import React, { useState } from "react";
+import {
+  StyleSheet,
+  View,
+  Text,
+  FlatList,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 
 import { images, COLORS, FONTS, SIZES } from "../../constants";
 import { CarItems } from "../components/CarItems";
 import { ModalDetail } from "./ModalDetail";
 
 export const Carrito = () => {
-    const [showAddToBagModal, setShowAddToBagModal] = useState(false);
-    const [selectedItem, setSelectedItem] = useState(null);
+  const [showAddToBagModal, setShowAddToBagModal] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
   const [recentlyViewed, setRecentlyViewed] = useState([
     {
       id: 0,
-      name: "Nike Metcon 4",
+      name: "Arreglo basico",
       img: images.flor1,
       bgColor: "#414045",
       type: "TRAINING",
@@ -19,7 +26,7 @@ export const Carrito = () => {
     },
     {
       id: 1,
-      name: "Nike Metcon 6",
+      name: "Ataud en caoba",
       img: images.nikePegasus36,
       bgColor: "#4EABA6",
       type: "TRAINING",
@@ -27,7 +34,7 @@ export const Carrito = () => {
     },
     {
       id: 2,
-      name: "Nike Metcon 5",
+      name: "Arreglo intermedio",
       img: images.flor3,
       bgColor: "#2B4660",
       type: "TRAINING",
@@ -37,8 +44,17 @@ export const Carrito = () => {
 
   return (
     <ScrollView showsVerticalScrollIndicator style={styles.container}>
-      <View >
-        <Text>Carrito</Text>
+      <View>
+        <Text
+          style={{
+            marginTop: SIZES.radius,
+            marginHorizontal: SIZES.padding,
+            marginRight: 270,
+            ...FONTS.largeTitleBold,
+          }}
+        >
+          CARRITO
+        </Text>
         <View style={{ flex: 1, paddingBottom: SIZES.padding }}>
           <FlatList
             showsVerticalScrollIndicator={false}
@@ -53,13 +69,47 @@ export const Carrito = () => {
             )}
           />
         </View>
+        <View>
+          <Text
+            style={{
+              marginTop: SIZES.radius,
+              marginHorizontal: SIZES.padding,
+              // marginRight: 270,
+              ...FONTS.largeTitleBold,
+            }}
+          >
+            Sub Total: {""}
+          </Text>
+        </View>
+        <View>
+          <TouchableOpacity
+            style={{
+              width: "40%",
+              height: 50,
+              marginTop: SIZES.base,
+              marginLeft: "3%",
+              borderRadius: 50,
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: "#E29F34",
+            }}
+            onPress={() => {
+              setSelectedItem(null);
+              setShowAddToBagModal(false);
+            }}
+          >
+            <Text style={{ color: COLORS.white, ...FONTS.largeTitleBold }}>
+              Pagar
+            </Text>
+          </TouchableOpacity>
+        </View>
         {selectedItem && (
           <ModalDetail
-          showAddToBagModal={showAddToBagModal}
-          setSelectedItem={setSelectedItem}
-          bgColor={"#585757"}
-          setShowAddToBagModal={setShowAddToBagModal}
-          selectedItem={selectedItem}
+            showAddToBagModal={showAddToBagModal}
+            setSelectedItem={setSelectedItem}
+            bgColor={"#585757"}
+            setShowAddToBagModal={setShowAddToBagModal}
+            selectedItem={selectedItem}
           />
         )}
       </View>
@@ -68,19 +118,19 @@ export const Carrito = () => {
 };
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: "#DADCDF",
+  container: {
+    flex: 1,
+    backgroundColor: "#DADCDF",
+  },
+  recentContainerShadow: {
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 10,
+      height: 10,
     },
-    recentContainerShadow: {
-      shadowColor: "#000",
-      shadowOffset: {
-        width: 10,
-        height: 10,
-      },
-      shadowOpacity: 0.43,
-      shadowRadius: 9.51,
-  
-      elevation: 15,
-    },
-  });
+    shadowOpacity: 0.43,
+    shadowRadius: 9.51,
+
+    elevation: 15,
+  },
+});

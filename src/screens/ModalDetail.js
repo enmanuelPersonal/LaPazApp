@@ -14,51 +14,10 @@ import { COLORS, FONTS, SIZES } from "../../constants";
 export const ModalDetail = ({
   showAddToBagModal,
   setSelectedItem,
-  setSelectedSize,
   setShowAddToBagModal,
   selectedItem,
-  selectedSize,
-  bgColor
+  bgColor,
 }) => {
-  function showSize() {
-    console.log("Hola");
-    return selectedItem.sizes.map((item, index) => {
-      return (
-        <TouchableOpacity
-          key={index}
-          style={{
-            width: 35,
-            height: 25,
-            alignItems: "center",
-            justifyContent: "center",
-            marginHorizontal: 5,
-            marginBottom: 10,
-            backgroundColor:
-              selectedItem.sizes[index] == selectedSize ? COLORS.white : null,
-            borderWidth: 1,
-            borderColor: COLORS.white,
-            borderRadius: 5,
-          }}
-          onPress={() => {
-            setSelectedSize(item);
-          }}
-        >
-          <Text
-            style={{
-              color:
-                selectedItem.sizes[index] == selectedSize
-                  ? COLORS.black
-                  : COLORS.white,
-              ...FONTS.body4,
-            }}
-          >
-            {item}
-          </Text>
-        </TouchableOpacity>
-      );
-    });
-  }
-
   return (
     <Modal
       animationType="slide"
@@ -75,22 +34,12 @@ export const ModalDetail = ({
         blurAmount={20}
         reducedTransparencyFallbackColor="white"
       >
-        {/* Button to close modal */}
-        <TouchableOpacity
-          style={styles.absolute}
-          onPress={() => {
-            setSelectedItem(null);
-            setSelectedSize("");
-            setShowAddToBagModal(false);
-          }}
-        ></TouchableOpacity>
-
         {/* Modal content */}
         <View
           style={{
             justifyContent: "center",
             width: "85%",
-            backgroundColor: '#DADCDF',
+            backgroundColor: "#DADCDF",
             height: "100%",
           }}
         >
@@ -106,7 +55,6 @@ export const ModalDetail = ({
               style={{
                 width: "90%",
                 height: 170,
-                transform: [{ rotate: "-15deg" }],
               }}
             />
           </View>
@@ -114,7 +62,7 @@ export const ModalDetail = ({
             style={{
               marginTop: SIZES.padding,
               marginHorizontal: SIZES.padding,
-              color: COLORS.white,
+              color: COLORS.black,
               ...FONTS.body2,
             }}
           >
@@ -124,7 +72,7 @@ export const ModalDetail = ({
             style={{
               marginTop: SIZES.base / 2,
               marginHorizontal: SIZES.padding,
-              color: COLORS.white,
+              color: COLORS.black,
               ...FONTS.body3,
             }}
           >
@@ -134,56 +82,60 @@ export const ModalDetail = ({
             style={{
               marginTop: SIZES.radius,
               marginHorizontal: SIZES.padding,
-              color: COLORS.white,
+              color: COLORS.black,
               ...FONTS.h1,
             }}
           >
             {selectedItem.price}
           </Text>
-          <View
-            style={{
-              flexDirection: "row",
-              marginTop: SIZES.radius,
-              marginHorizontal: SIZES.padding,
-            }}
-          >
-            <View>
-              <Text style={{ color: COLORS.white, ...FONTS.body3 }}>
-                Select size
-              </Text>
-            </View>
-            <View
+          <View style={{ flexDirection: "row" }}>
+            <TouchableOpacity
               style={{
-                flex: 1,
-                flexWrap: "wrap",
-                flexDirection: "row",
-                marginLeft: SIZES.radius,
+                width: "40%",
+                height: 50,
+                marginTop: SIZES.base,
+                marginLeft: "3%",
+                borderRadius: 50,
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "rgba(0,0,0,0.5)",
+              }}
+              onPress={() => {
+                setSelectedItem(null);
+                setShowAddToBagModal(false);
               }}
             >
-              {/* Mostrar los size */}
-              {/* {showSize()} */}
-            </View>
+              <Text style={{ color: COLORS.white, ...FONTS.largeTitleBold }}>
+                Atras
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                width: "60%",
+                height: 50,
+                marginTop: SIZES.base,
+                marginLeft: "10%",
+                borderRadius: 50,
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "#E29F34",
+              }}
+              onPress={() => {
+                setSelectedItem(null);
+                setShowAddToBagModal(false);
+              }}
+            >
+              <Text
+                style={{
+                  color: COLORS.white,
+                  fontFamily: "CarmenSans-SemiBold",
+                  fontSize: 20,
+                }}
+              >
+                Agregar al carrito
+              </Text>
+            </TouchableOpacity>
           </View>
-
-          <TouchableOpacity
-            style={{
-              width: "100%",
-              height: 70,
-              marginTop: SIZES.base,
-              alignItems: "center",
-              justifyContent: "center",
-              backgroundColor: "rgba(0,0,0,0.5)",
-            }}
-            onPress={() => {
-              setSelectedItem(null);
-              setSelectedSize("");
-              setShowAddToBagModal(false);
-            }}
-          >
-            <Text style={{ color: COLORS.white, ...FONTS.largeTitleBold }}>
-              Add to Bag
-            </Text>
-          </TouchableOpacity>
         </View>
       </BlurView>
     </Modal>

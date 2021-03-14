@@ -17,7 +17,6 @@ const Home = () => {
   const { dispatch } = useContext(AppContext);
   const [showAddToBagModal, setShowAddToBagModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
-  const [selectedSize, setSelectedSize] = useState("");
   const colors = ["#F7BE5D", "#F75D5D", "#F49A5C", "#804C28", "#F85342"];
   const [trending, setTrending] = useState([
     {
@@ -113,8 +112,8 @@ const Home = () => {
   };
 
   return (
-    <ScrollView>
-      <View style={styles.container}>
+    <ScrollView showsVerticalScrollIndicator style={styles.container}>
+      <View >
         <View style={{ flexDirection: "row", alignItems: "flex-end" }}>
           <Text
             style={{
@@ -195,11 +194,9 @@ const Home = () => {
           <ModalDetail
             showAddToBagModal={showAddToBagModal}
             setSelectedItem={setSelectedItem}
-            setSelectedSize={setSelectedSize}
             bgColor={"#585757"}
             setShowAddToBagModal={setShowAddToBagModal}
             selectedItem={selectedItem}
-            selectedSize={selectedSize}
           />
         )}
         <View>

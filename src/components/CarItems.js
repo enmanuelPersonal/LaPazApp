@@ -1,5 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
+import IconAntDesign from "react-native-vector-icons/AntDesign";
+import IconEntypo from "react-native-vector-icons/Entypo";
 
 import { COLORS, FONTS, SIZES } from "../../constants";
 
@@ -47,12 +49,43 @@ export const CarItems = ({ item, setSelectedItem, setShowAddToBagModal }) => {
             {item.name}
           </Text>
           <Text style={{ ...FONTS.h3 }}>{item.price}</Text>
-          <View>
-            <Text style={{ color: COLORS.black, ...FONTS.body3 }}>Cantidad: 5</Text>
+          <View style={{flexDirection: "row", alignContent: "center", alignItems: "center"}} >
+            <Text style={{ color: COLORS.black, ...FONTS.body3 }}>Cantidad: {item.cant} </Text>
+            <IconEntypo
+            style={{
+              // marginTop: 40,
+              marginRight: 20,
+              marginLeft: 10,
+            }}
+            name="circle-with-plus"
+            size={30}
+            color="#8D8C8B"
+            onPress={()=> console.log("object")}
+          /> 
+          <IconEntypo
+          style={{
+            // marginTop: 40,
+            // marginRight: 20,
+          }}
+          name="circle-with-minus"
+          size={30}
+          color="#8D8C8B"
+          onPress={()=> console.log("object")}
+        />
           </View>
         </View>
         <View>
-          <TouchableOpacity
+        <IconAntDesign
+            style={{
+              marginTop: 40,
+              marginRight: 20,
+            }}
+            name="delete"
+            size={30}
+            color="#F73720"
+            onPress={()=> console.log("object")}
+          />
+          {/* <TouchableOpacity
             style={{
               width: 50,
               height: 20,
@@ -77,7 +110,7 @@ export const CarItems = ({ item, setSelectedItem, setShowAddToBagModal }) => {
             >
               Eliminar
             </Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       </TouchableOpacity>
     </View>

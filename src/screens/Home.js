@@ -21,26 +21,20 @@ const Home = () => {
   const [trending, setTrending] = useState([
     {
       id: 0,
-      name: "Nike Air Zoom Pegasus 36",
+      name: "Ataud de caoba",
       img: images.nikePegasus36,
-      bgColor: "#A7ADB1",
-      type: "RUNNING",
       price: "$186",
     },
     {
       id: 1,
-      name: "Nike Metcon 5",
+      name: "Ataud de caoba basica",
       img: images.nikeMetcon5Black,
-      bgColor: "#A7ADB1",
-      type: "TRAINING",
       price: "$135",
     },
     {
       id: 2,
-      name: "Nike Air Zoom Kobe 1 Proto",
+      name: "Ataud de caoba normal",
       img: images.nikeZoomKobe1Proto,
-      bgColor: "#A7ADB1",
-      type: "BASKETBALL",
       price: "$199",
     },
   ]);
@@ -50,24 +44,18 @@ const Home = () => {
       id: 0,
       name: "Arreglo full",
       img: images.flor1,
-      bgColor: "#A7ADB1",
-      type: "FULL",
       price: "$186",
     },
     {
       id: 1,
       name: "Arreglo basico",
       img: images.flor2,
-      bgColor: "#A7ADB1",
-      type: "BASICO",
       price: "$135",
     },
     {
       id: 2,
       name: "Arreglo intermedio",
       img: images.flor3,
-      bgColor: "#A7ADB1",
-      type: "INTERMEDIO",
       price: "$199",
     },
   ]);
@@ -75,30 +63,21 @@ const Home = () => {
   const [recentlyViewed, setRecentlyViewed] = useState([
     {
       id: 0,
-      name: "Nike Metcon 4",
-      img: images.nikeMetcon4,
-      bgColor: "#414045",
-      type: "TRAINING",
+      name: "Lapida normal",
+      img: images.lapida,
       price: "$119",
-      sizes: [6, 7, 8],
     },
     {
       id: 1,
-      name: "Nike Metcon 6",
-      img: images.nikeMetcon6,
-      bgColor: "#4EABA6",
-      type: "TRAINING",
+      name: "Ataud de caoba",
+      img: images.nikePegasus36,
       price: "$135",
-      sizes: [6, 7, 8, 9, 10, 11],
     },
     {
       id: 2,
-      name: "Nike Metcon 5",
-      img: images.nikeMetcon5Purple,
-      bgColor: "#2B4660",
-      type: "TRAINING",
+      name: "Lapida en marmol",
+      img: images.lapida1,
       price: "$124",
-      sizes: [6, 7, 8, 9],
     },
   ]);
 
@@ -113,7 +92,7 @@ const Home = () => {
 
   return (
     <ScrollView showsVerticalScrollIndicator style={styles.container}>
-      <View >
+      <View>
         <View style={{ flexDirection: "row", alignItems: "flex-end" }}>
           <Text
             style={{
@@ -199,9 +178,6 @@ const Home = () => {
             selectedItem={selectedItem}
           />
         )}
-        <View>
-          <Text>HOLA</Text>
-        </View>
       </View>
     </ScrollView>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -9,10 +9,16 @@ import {
 } from "react-native";
 
 import { images, COLORS, FONTS, SIZES } from "../../constants";
+import { CARRITO } from "../auth/actions";
+import AppContext from "../auth/AuthContext";
 import { CarItems } from "../components/CarItems";
 import { ModalDetail } from "./ModalDetail";
 
 export const Carrito = () => {
+  const {
+    dispatch,
+    state: { carrito },
+  } = useContext(AppContext);
   const [showAddToBagModal, setShowAddToBagModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [recentlyViewed, setRecentlyViewed] = useState([
@@ -20,7 +26,7 @@ export const Carrito = () => {
       id: 0,
       name: "Arreglo basico",
       img: images.flor1,
-      bgColor: "#414045",
+      cant: 1,
       type: "TRAINING",
       price: "$119",
     },
@@ -28,7 +34,7 @@ export const Carrito = () => {
       id: 1,
       name: "Ataud en caoba",
       img: images.nikePegasus36,
-      bgColor: "#4EABA6",
+      cant: 5,
       type: "TRAINING",
       price: "$135",
     },
@@ -36,14 +42,19 @@ export const Carrito = () => {
       id: 2,
       name: "Arreglo intermedio",
       img: images.flor3,
-      bgColor: "#2B4660",
+      cant: 2,
       type: "TRAINING",
       price: "$124",
     },
   ]);
 
+  useEffect(() => {
+    dispatch({ type: CARRITO, payload: recentlyViewed });
+  }, []);
+
   return (
     <ScrollView showsVerticalScrollIndicator style={styles.container}>
+      {console.log(carrito)}
       <View>
         <Text
           style={{
@@ -58,7 +69,7 @@ export const Carrito = () => {
         <View style={{ flex: 1, paddingBottom: SIZES.padding }}>
           <FlatList
             showsVerticalScrollIndicator={false}
-            data={recentlyViewed}
+            data={carrito}
             keyExtractor={(item) => item.id.toString()}
             renderItem={({ item }) => (
               <CarItems
@@ -78,7 +89,7 @@ export const Carrito = () => {
               ...FONTS.largeTitleBold,
             }}
           >
-            Sub Total: {""}
+            Sub Total: <Text style={{fontSize: 25}}>   ${"1042.00"}</Text>
           </Text>
         </View>
         <View>
@@ -91,7 +102,7 @@ export const Carrito = () => {
               borderRadius: 50,
               alignItems: "center",
               justifyContent: "center",
-              backgroundColor: "#E29F34",
+              backgroundColor: "#2EB22A",
             }}
             onPress={() => {
               setSelectedItem(null);

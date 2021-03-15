@@ -10,19 +10,22 @@ export const recentlyViewedLabel = require("../assets/images/recently-viewed-lab
 export const flor1 = require("../assets/images/flo1.png");
 export const flor2 = require("../assets/images/flor2.png");
 export const flor3 = require("../assets/images/flor3.png");
-
+export const lapida = require("../assets/images/lapida.png");
+export const lapida1 = require("../assets/images/lapida1.png");
 
 export default {
-    nikeMetcon3,
-    nikeMetcon4,
-    nikeMetcon5Black,
-    nikeMetcon5Purple,
-    nikeMetcon6,
-    nikeMetconFree,
-    nikePegasus36,
-    nikeZoomKobe1Proto,
-    recentlyViewedLabel,
-    flor1,
-    flor2,
-    flor3
-}
+  nikeMetcon3,
+  nikeMetcon4,
+  nikeMetcon5Black,
+  nikeMetcon5Purple,
+  nikeMetcon6,
+  nikeMetconFree,
+  nikePegasus36,
+  nikeZoomKobe1Proto,
+  recentlyViewedLabel,
+  flor1,
+  flor2,
+  flor3,
+  lapida,
+  lapida1,
+};

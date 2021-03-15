@@ -1,4 +1,4 @@
-import { RESET_STATES, USER_LOGIN, USER_LOGOUT } from "./actions";
+import { RESET_STATES, USER_LOGIN, USER_LOGOUT, CARRITO } from "./actions";
 
 const reducer = (state, { type, payload }) => {
   const setState = (payload) => {
@@ -19,6 +19,10 @@ const reducer = (state, { type, payload }) => {
       return setState({
         isUserLoggedIn: false,
         userData: undefined,
+      });
+    case CARRITO:
+      return setState({
+        carrito: payload,
       });
     default:
       return state;

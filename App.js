@@ -21,6 +21,7 @@ const theme = {
 const initialState = {
   isUserLoggedIn: false,
   userData: undefined,
+  carrito: []
 };
 
 const Stack = createStackNavigator();

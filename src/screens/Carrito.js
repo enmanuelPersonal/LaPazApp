@@ -12,6 +12,7 @@ import { images, COLORS, FONTS, SIZES } from "../../constants";
 import { CARRITO } from "../auth/actions";
 import AppContext from "../auth/AuthContext";
 import { CarItems } from "../components/CarItems";
+import { Stripe } from "../components/Stripe";
 import { ModalDetail } from "./ModalDetail";
 
 export const Carrito = () => {
@@ -20,6 +21,8 @@ export const Carrito = () => {
     state: { carrito },
   } = useContext(AppContext);
   const [showAddToBagModal, setShowAddToBagModal] = useState(false);
+  const [showPayment, setShowPayment] = useState(false);
+  const [subTotal, setSubTotal] = useState(1042.00);
   const [selectedItem, setSelectedItem] = useState(null);
   const [recentlyViewed, setRecentlyViewed] = useState([
     {
@@ -27,7 +30,6 @@ export const Carrito = () => {
       name: "Arreglo basico",
       img: images.flor1,
       cant: 1,
-      type: "TRAINING",
       price: "$119",
     },
     {
@@ -35,7 +37,6 @@ export const Carrito = () => {
       name: "Ataud en caoba",
       img: images.nikePegasus36,
       cant: 5,
-      type: "TRAINING",
       price: "$135",
     },
     {
@@ -43,7 +44,6 @@ export const Carrito = () => {
       name: "Arreglo intermedio",
       img: images.flor3,
       cant: 2,
-      type: "TRAINING",
       price: "$124",
     },
   ]);
@@ -89,7 +89,7 @@ export const Carrito = () => {
               ...FONTS.largeTitleBold,
             }}
           >
-            Sub Total: <Text style={{fontSize: 25}}>   ${"1042.00"}</Text>
+            Sub Total: <Text style={{fontSize: 25}}>   ${subTotal}</Text>
           </Text>
         </View>
         <View>
@@ -105,8 +105,7 @@ export const Carrito = () => {
               backgroundColor: "#2EB22A",
             }}
             onPress={() => {
-              setSelectedItem(null);
-              setShowAddToBagModal(false);
+              setShowPayment(true);
             }}
           >
             <Text style={{ color: COLORS.white, ...FONTS.largeTitleBold }}>
@@ -121,6 +120,13 @@ export const Carrito = () => {
             bgColor={"#585757"}
             setShowAddToBagModal={setShowAddToBagModal}
             selectedItem={selectedItem}
+          />
+        )}
+          {showPayment && (
+          <Stripe
+          showPayment={showPayment}
+          setShowPayment={setShowPayment}
+          monto={subTotal}
           />
         )}
       </View>

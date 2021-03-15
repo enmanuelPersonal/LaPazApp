@@ -12,6 +12,7 @@ export const flor2 = require("../assets/images/flor2.png");
 export const flor3 = require("../assets/images/flor3.png");
 export const lapida = require("../assets/images/lapida.png");
 export const lapida1 = require("../assets/images/lapida1.png");
+export const pago = require("../assets/images/pago.png");
 
 export default {
   nikeMetcon3,
@@ -28,4 +29,5 @@ export default {
   flor3,
   lapida,
   lapida1,
+  pago
 };

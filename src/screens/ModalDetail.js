@@ -10,6 +10,7 @@ import {
 import { BlurView } from "@react-native-community/blur";
 
 import { COLORS, FONTS, SIZES } from "../../constants";
+import globalStyles from "../styles/global";
 
 export const ModalDetail = ({
   showAddToBagModal,
@@ -98,16 +99,14 @@ export const ModalDetail = ({
                 borderRadius: 50,
                 alignItems: "center",
                 justifyContent: "center",
-                backgroundColor: "rgba(0,0,0,0.5)",
+                ...globalStyles.boton,
               }}
               onPress={() => {
                 setSelectedItem(null);
                 setShowAddToBagModal(false);
               }}
             >
-              <Text style={{ color: COLORS.white, ...FONTS.largeTitleBold }}>
-                Atras
-              </Text>
+              <Text style={globalStyles.botonTexto}>Atras</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={{
@@ -118,22 +117,14 @@ export const ModalDetail = ({
                 borderRadius: 50,
                 alignItems: "center",
                 justifyContent: "center",
-                backgroundColor: "#E29F34",
+                backgroundColor: "#E1971E",
               }}
               onPress={() => {
                 setSelectedItem(null);
                 setShowAddToBagModal(false);
               }}
             >
-              <Text
-                style={{
-                  color: COLORS.white,
-                  fontFamily: "CarmenSans-SemiBold",
-                  fontSize: 20,
-                }}
-              >
-                Agregar al carrito
-              </Text>
+              <Text style={globalStyles.botonTexto}>Agregar al carrito</Text>
             </TouchableOpacity>
           </View>
         </View>

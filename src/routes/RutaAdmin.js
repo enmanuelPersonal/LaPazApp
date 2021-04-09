@@ -3,6 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../../src/screens/Home";
 import { Carrito } from "../../src/screens/Carrito";
 import { Menu } from "../components/Menu";
+import { Suscripcion } from "../screens/suscripcion/Suscripcion";
 
 const Stack = createStackNavigator();
 
@@ -29,6 +30,13 @@ export const RutaAdmin = ({ navigation }) => {
         <Stack.Screen
           name="carrito"
           component={Carrito}
+          options={{
+            headerShown: false,
+          }}
+        />
+         <Stack.Screen
+          name="suscripcion"
+          component={Suscripcion}
           options={{
             headerShown: false,
           }}

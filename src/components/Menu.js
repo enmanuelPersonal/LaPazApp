@@ -9,7 +9,7 @@ import IconStripe from "react-native-vector-icons/FontAwesome";
 export const Menu = ({ navigation }) => {
   const initState = {
     inicio: false,
-    inscripcion: false,
+    suscripcion: false,
     cuotas: false,
     carrito: false,
   };
@@ -38,19 +38,22 @@ export const Menu = ({ navigation }) => {
             inicio
           </Text>
         </Button>
-        <Button vertical onPress={() => Tap("inscripcion")}>
+        <Button vertical onPress={() => Tap("suscripcion")}>
           <IconAntDesign
             name="filetext1"
             size={30}
-            color={state.inscripcion ? "#000" : "#A1A2A3"}
+            color={state.suscripcion ? "#000" : "#A1A2A3"}
           />
           <Text
             style={[
-              styles.text,
-              state.inscripcion ? { color: "#000" } : { color: "#A1A2A3" },
+              {
+                fontWeight: "bold",
+                fontSize: 11,
+              },
+              state.suscripcion ? { color: "#000" } : { color: "#A1A2A3" },
             ]}
           >
-            inscripcion
+            Suscripcion
           </Text>
         </Button>
         <Button vertical onPress={() => Tap("cuotas")}>

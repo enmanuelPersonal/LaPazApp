@@ -1,6 +1,7 @@
 import React, { useEffect, useReducer, useState } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
+import { Provider as PaperProvider } from "react-native-paper";
 
 import { RutaAdmin } from "./src/routes/RutaAdmin";
 import { Login } from "./src/screens/Login";
@@ -21,7 +22,7 @@ const theme = {
 const initialState = {
   isUserLoggedIn: false,
   userData: undefined,
-  carrito: []
+  carrito: [],
 };
 
 const Stack = createStackNavigator();
@@ -54,34 +55,36 @@ const App = () => {
   }, []);
 
   return (
-    <AppContext.Provider value={{ state, dispatch }}>
-      <NavigationContainer theme={theme}>
-        <Stack.Navigator initialRouteName={"login"}>
-          <Stack.Screen
-            name="login"
-            component={Login}
-            options={{
-              headerShown: false,
-            }}
-          />
-          <Stack.Screen
-            name="signUp"
-            component={SignUp}
-            options={{
-              headerShown: false,
-            }}
-          />
-          <Stack.Screen
-            name="ruta"
-            component={RutaAdmin}
-            options={{
-              headerShown: false,
-            }}
-          />
-        </Stack.Navigator>
-        {/* {loggedIn && navigation.navigate("inicio")} */}
-      </NavigationContainer>
-    </AppContext.Provider>
+    <PaperProvider>
+      <AppContext.Provider value={{ state, dispatch }}>
+        <NavigationContainer theme={theme}>
+          <Stack.Navigator initialRouteName={"login"}>
+            <Stack.Screen
+              name="login"
+              component={Login}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="signUp"
+              component={SignUp}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="ruta"
+              component={RutaAdmin}
+              options={{
+                headerShown: false,
+              }}
+            />
+          </Stack.Navigator>
+          {/* {loggedIn && navigation.navigate("inicio")} */}
+        </NavigationContainer>
+      </AppContext.Provider>
+    </PaperProvider>
   );
 };
 

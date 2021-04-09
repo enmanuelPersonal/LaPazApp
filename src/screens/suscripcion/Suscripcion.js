@@ -1,11 +1,13 @@
 import React, { useState, useContext, useEffect } from "react";
 import { StyleSheet, View, Text, ScrollView } from "react-native";
-import { TextInput } from "react-native-paper";
+import { TextInput, Button } from "react-native-paper";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import DropDown from "react-native-paper-dropdown";
 import AppContext from "../../auth/AuthContext";
 import { get } from "../../helpers/fetch";
 import { Cliente } from "./cliente";
+import { Parientes } from "./Parientes";
+import { TableParientes } from "./TableParientes";
 
 export const Suscripcion = () => {
   const {
@@ -136,6 +138,26 @@ export const Suscripcion = () => {
           direccion={direccion}
         />
       </View>
+      <View style={styles.containerStyle}>
+        <Parientes setParientes={setParientes} parientes={parientes} />
+      </View>
+      <View style={styles.containerStyle}>
+        <View style={{ width: "100%" }}>
+          <TableParientes setParientes={setParientes} parientes={parientes} />
+        </View>
+      </View>
+      <View style={ {...styles.containerStyle, backgroundColor: "transparent"}}>
+        <View style={{ width: "48%" }}>
+          <Button
+            style={{ borderRadius: 12, marginRight: 15 }}
+            mode="contained"
+            color="#000"
+            // onPress={handleSave}
+          >
+            Enviar
+          </Button>
+        </View>
+      </View>
     </ScrollView>
   );
 };
@@ -150,6 +172,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 2,
     borderRadius: 10,
     flex: 1,
+    marginBottom: 20,
   },
   rowStyle: {
     flexDirection: "row",

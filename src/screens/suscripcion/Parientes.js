@@ -5,10 +5,10 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import Fontisto from "react-native-vector-icons/Fontisto";
 import DropDown from "react-native-paper-dropdown";
 import { get } from "../../helpers/fetch";
-import { Direccion } from "../../components/Direccion";
 import { FechaNacimiento } from "../../components/FechaNacimiento";
+import { formatDate } from "../../helpers/formatDate";
 
-const initialStateCliente = {
+const initialStatePariente = {
   nombre: "",
   apellido: "",
   sexo: "",
@@ -33,20 +33,16 @@ const phoneItems = [
   { value: "celular", label: "Celular" },
 ];
 
-export const Cliente = ({
-  setCliente,
-  setClientEntidadId,
-  setDireccion,
-  direccion,
-}) => {
+export const Parientes = ({ setParientes, parientes }) => {
   const [showDropDown, setShowDropDown] = useState(false);
   const [showDropDownTele, setShowDropDownTele] = useState(false);
   const [showDropDownGenero, setShowDropDownGenero] = useState(false);
-  const [showDireccion, setShowDireccion] = useState(false);
   const [showFechaCliente, setShowFechaCliente] = useState(false);
 
   const [typeIdentity, setTypeIdentity] = useState([]);
-  const [getClienteData, setGetClienteData] = useState(initialStateCliente);
+  const [getParientesData, setGetParientesData] = useState(
+    initialStatePariente
+  );
 
   const [getTelefono, setGetTelefono] = useState(initialStateTelefono);
 
@@ -57,7 +53,7 @@ export const Cliente = ({
     identidades: { identidad, idTipoIdentidad },
     correos,
     nacimiento,
-  } = getClienteData;
+  } = getParientesData;
 
   const { telefono, tipo } = getTelefono;
 
@@ -78,12 +74,43 @@ export const Cliente = ({
     if (typeIdentity && !typeIdentity.length) fetchTypeIdentity();
   }, []);
 
-  const handleChangeCliente = (value, name) => {
-    setGetClienteData({ ...getClienteData, [name]: value });
+  const handleChangeParientes = (value, name) => {
+    setGetParientesData({ ...getParientesData, [name]: value });
   };
 
   const handleChangeTelefono = (value, name) => {
     setGetTelefono({ ...getTelefono, [name]: value });
+  };
+
+  const handleSave = () => {
+    const userData = {};
+
+    Object.assign(
+      userData,
+      { nombre },
+      { apellido },
+      { correos: correos ? [correos] : [] },
+      {
+        telefonos: telefono ? [{ telefono: telefono, tipo }] : [],
+      },
+      {
+        identidades: identidad
+          ? {
+              identidad: identidad,
+              idTipoIdentidad,
+            }
+          : "",
+      },
+      { nacimiento: formatDate(nacimiento) },
+      { sexo }
+    );
+    setParientes([...parientes, { ...userData }]);
+    handleLimpiar();
+  };
+
+  const handleLimpiar = () => {
+    setGetParientesData(initialStatePariente);
+    setGetTelefono(initialStateTelefono);
   };
 
   return (
@@ -98,7 +125,7 @@ export const Cliente = ({
             marginLeft: 5,
           }}
         >
-          Cliente
+          Pariente
         </Text>
       </View>
       <View style={styles.rowStyle}>
@@ -107,7 +134,7 @@ export const Cliente = ({
             label="Nombre"
             mode={"outlined"}
             value={nombre}
-            onChangeText={(value) => handleChangeCliente(value, "nombre")}
+            onChangeText={(value) => handleChangeParientes(value, "nombre")}
           />
         </View>
         <View style={{ width: "48%" }}>
@@ -115,7 +142,7 @@ export const Cliente = ({
             label="Apellidos"
             mode={"outlined"}
             value={apellido}
-            onChangeText={(value) => handleChangeCliente(value, "apellido")}
+            onChangeText={(value) => handleChangeParientes(value, "apellido")}
           />
         </View>
       </View>
@@ -127,7 +154,7 @@ export const Cliente = ({
             mode={"outlined"}
             value={identidad}
             onChangeText={(value) =>
-              handleChangeCliente(
+              handleChangeParientes(
                 { identidad: value, idTipoIdentidad },
                 "identidades"
               )
@@ -140,7 +167,7 @@ export const Cliente = ({
             mode={"outlined"}
             value={idTipoIdentidad}
             setValue={(value) =>
-              handleChangeCliente(
+              handleChangeParientes(
                 { identidad, idTipoIdentidad: value },
                 "identidades"
               )
@@ -190,7 +217,6 @@ export const Cliente = ({
                 name="date"
                 size={25}
                 color="#fff"
-                // style={{ marginRight: 5 }}
               />
             )}
             mode="contained"
@@ -204,7 +230,7 @@ export const Cliente = ({
             label="Genero"
             mode={"outlined"}
             value={sexo}
-            setValue={(value) => handleChangeCliente(value, "sexo")}
+            setValue={(value) => handleChangeParientes(value, "sexo")}
             list={genderItems}
             visible={showDropDownGenero}
             showDropDown={() => setShowDropDownGenero(true)}
@@ -220,43 +246,37 @@ export const Cliente = ({
           label="Correo"
           mode={"outlined"}
           value={correos}
-          onChangeText={(value) => handleChangeCliente(value, "correos")}
+          onChangeText={(value) => handleChangeParientes(value, "correos")}
         />
       </View>
       <View style={styles.rowStyle}>
-        <View style={{ width: "35%" }}>
+        <View style={{ width: "48%" }}>
           <Button
-            color={direccion.length ? "#28AE26" : "#000"}
-            style={{ borderRadius: 10 }}
-            icon={() => (
-              <Ionicons
-                name="add-sharp"
-                size={30}
-                color="#fff"
-                style={{ marginLeft: -10, marginRight: -10 }}
-              />
-            )}
+            style={{ borderRadius: 12, marginRight: 15 }}
             mode="contained"
-            onPress={() => setShowDireccion(true)}
+            color="#000"
+            onPress={handleSave}
           >
-            Direccion
+            Guardar
+          </Button>
+        </View>
+        <View style={{ width: "48%" }}>
+          <Button
+            style={{ borderRadius: 12, marginRight: 15 }}
+            mode="contained"
+            color="#7C7E7C"
+            onPress={handleLimpiar}
+          >
+            Limpiar
           </Button>
         </View>
       </View>
-      {showDireccion && (
-        <Direccion
-          setDialog={setShowDireccion}
-          visible={showDireccion}
-          setDireccion={setDireccion}
-          direccion={direccion}
-        />
-      )}
       {showFechaCliente && (
         <FechaNacimiento
           setDialog={setShowFechaCliente}
           visible={showFechaCliente}
-          setFecha={setGetClienteData}
-          getData={getClienteData}
+          setFecha={setGetParientesData}
+          getData={getParientesData}
         />
       )}
     </View>

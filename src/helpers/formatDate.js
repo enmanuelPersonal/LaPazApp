@@ -1,5 +1,7 @@
 export const formatDate = (date) => {
-  const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
-  const newDate = new Date(date);
-  return newDate.toLocaleDateString('en-US', options);
+  const getDateNacimiento = new Date(date);
+  const getDay = getDateNacimiento.getDate();
+  const getMonth = getDateNacimiento.getMonth() + 1;
+  const getYear = getDateNacimiento.getFullYear();
+  return getDay + "/" + getMonth + "/" + getYear;
 };

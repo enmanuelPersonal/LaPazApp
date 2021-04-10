@@ -54,7 +54,6 @@ export const Carrito = () => {
 
   return (
     <ScrollView showsVerticalScrollIndicator style={styles.container}>
-      {console.log(carrito)}
       <View>
         <Text
           style={{

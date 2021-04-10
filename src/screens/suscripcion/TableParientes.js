@@ -68,7 +68,6 @@ export const TableParientes = ({ setParientes, parientes }) => {
                 >
                   <DataTable.Cell>{`${nombre} ${apellido}`}</DataTable.Cell>
                   <DataTable.Cell>
-                    {console.log(identidades)}
                     {identidades.identidad ? identidades.identidad : ""}
                   </DataTable.Cell>
                   <DataTable.Cell>{nacimiento}</DataTable.Cell>

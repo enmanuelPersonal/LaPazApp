@@ -14,7 +14,7 @@ import IconAntDesign from "react-native-vector-icons/AntDesign";
 import { COLORS, FONTS, SIZES, images } from "../../constants";
 import globalStyles from "../styles/global";
 
-export const Stripe = ({ showPayment, setShowPayment, monto }) => {
+export const Stripe = ({ showPayment, setShowPayment, monto, title }) => {
   return (
     <Modal
       animationType="slide"
@@ -32,6 +32,9 @@ export const Stripe = ({ showPayment, setShowPayment, monto }) => {
         reducedTransparencyFallbackColor="white"
       >
         {/* Modal content */}
+        <View>
+          <Text>Text</Text>
+        </View>
         <View
           style={{
             justifyContent: "center",

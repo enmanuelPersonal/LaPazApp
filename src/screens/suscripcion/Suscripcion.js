@@ -1,26 +1,46 @@
 import React, { useState, useContext, useEffect } from "react";
-import { StyleSheet, View, Text, ScrollView } from "react-native";
+import { StyleSheet, View, Text, ScrollView, Alert } from "react-native";
 import { TextInput, Button } from "react-native-paper";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import DropDown from "react-native-paper-dropdown";
 import AppContext from "../../auth/AuthContext";
-import { get } from "../../helpers/fetch";
+import { get, post } from "../../helpers/fetch";
 import { Cliente } from "./cliente";
 import { Parientes } from "./Parientes";
 import { TableParientes } from "./TableParientes";
+import { formatDate } from "../../helpers/formatDate";
+import { PagoStripe } from "../../components/PagosStripe";
+import { ShowAlert } from "../../components/Alert";
+
+const initialStateCliente = {
+  nombre: "",
+  apellido: "",
+  sexo: "",
+  identidades: { identidad: "", idTipoIdentidad: "" },
+  correos: [],
+  nacimiento: Date.now(),
+};
+
+const initialStateTelefono = {
+  telefono: "",
+  tipo: "",
+};
 
 export const Suscripcion = () => {
   const {
-    dispatch,
-    state: { userData },
+    state: {
+      userData: { idEntidad, idUsuario },
+    },
   } = useContext(AppContext);
+  const [showPago, setShowPago] = useState(false);
   const [showDropDown, setShowDropDown] = useState(false);
   const [showDropDownEstado, setShowDropDownEstado] = useState(false);
   const [typePlanSelect, setTypePlanSelect] = useState([]);
   const [typePlan, setTypePlan] = useState([]);
+  const [getClienteData, setGetClienteData] = useState(initialStateCliente);
 
-  const [cliente, setCliente] = useState({});
-  const [clientEntidadId, setClientEntidadId] = useState("");
+  const [getTelefono, setGetTelefono] = useState(initialStateTelefono);
+
   const [parientes, setParientes] = useState([]);
   const [direccion, setDireccion] = useState([]);
   const [getTypePlan, setGetTypePlan] = useState("");
@@ -60,6 +80,62 @@ export const Suscripcion = () => {
       }
     });
     setGetTypePlan(value);
+  };
+
+  const handleSave = () => {
+    const userData = {};
+
+    Object.assign(
+      userData,
+      {
+        client: {
+          ...getClienteData,
+          nacimiento: formatDate(getClienteData.nacimiento),
+        },
+      },
+      {
+        telefonos: [getTelefono],
+      },
+      {
+        direcciones: direccion,
+      },
+      {
+        parientes: parientes,
+      },
+      {
+        idTipoPlan: getTypePlan,
+      },
+      {
+        monto: parseFloat(getMonto),
+      },
+      {
+        idUsuario,
+      },
+      {
+        getIdEntidad: idEntidad,
+      }
+    );
+
+    return post("suscripcion/add", userData)
+      .then(async (response) => {
+        if (response.status === 201) {
+          Alert.alert(
+            "Correcto!",
+            "Se ha suscripto correctamente, su suscripcion quedara en proceso",
+            [{ text: "OK", onPress: () => console.log("OK Pressed") }],
+            { cancelable: false }
+          );
+        } else {
+          const res = await response.json();
+          ShowAlert({ title: "Error", msj: res.message });
+        }
+      })
+      .catch((err) => {
+        ShowAlert({
+          title: "Error",
+          msj: "Verifique que todos los campos esten correctos",
+        });
+      });
   };
 
   return (
@@ -132,8 +208,10 @@ export const Suscripcion = () => {
       </View>
       <View style={styles.containerStyle}>
         <Cliente
-          setCliente={setCliente}
-          setClientEntidadId={setClientEntidadId}
+          getClienteData={getClienteData}
+          setGetClienteData={setGetClienteData}
+          getTelefono={getTelefono}
+          setGetTelefono={setGetTelefono}
           setDireccion={setDireccion}
           direccion={direccion}
         />
@@ -146,18 +224,30 @@ export const Suscripcion = () => {
           <TableParientes setParientes={setParientes} parientes={parientes} />
         </View>
       </View>
-      <View style={ {...styles.containerStyle, backgroundColor: "transparent"}}>
+      <View
+        style={{ ...styles.containerStyle, backgroundColor: "transparent" }}
+      >
         <View style={{ width: "48%" }}>
           <Button
             style={{ borderRadius: 12, marginRight: 15 }}
             mode="contained"
             color="#000"
-            // onPress={handleSave}
+            onPress={() => setShowPago(true)}
           >
             Enviar
           </Button>
         </View>
       </View>
+      {showPago && (
+        <PagoStripe
+          setDialog={setShowPago}
+          visible={showPago}
+          monto={getMonto}
+          title="Pagar suscripcion"
+          handleSave={handleSave}
+          description={`Pago de sucripcion cliente ${getClienteData.nombre} ${getClienteData.apellido}`}
+        />
+      )}
     </ScrollView>
   );
 };

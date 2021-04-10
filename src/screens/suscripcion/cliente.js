@@ -8,20 +8,6 @@ import { get } from "../../helpers/fetch";
 import { Direccion } from "../../components/Direccion";
 import { FechaNacimiento } from "../../components/FechaNacimiento";
 
-const initialStateCliente = {
-  nombre: "",
-  apellido: "",
-  sexo: "",
-  identidades: { identidad: "", idTipoIdentidad: "" },
-  correos: "",
-  nacimiento: Date.now(),
-};
-
-const initialStateTelefono = {
-  telefono: "",
-  tipo: "",
-};
-
 const genderItems = [
   { value: "M", label: "M" },
   { value: "F", label: "F" },
@@ -34,8 +20,10 @@ const phoneItems = [
 ];
 
 export const Cliente = ({
-  setCliente,
-  setClientEntidadId,
+  getClienteData,
+  setGetClienteData,
+  getTelefono,
+  setGetTelefono,
   setDireccion,
   direccion,
 }) => {
@@ -46,9 +34,9 @@ export const Cliente = ({
   const [showFechaCliente, setShowFechaCliente] = useState(false);
 
   const [typeIdentity, setTypeIdentity] = useState([]);
-  const [getClienteData, setGetClienteData] = useState(initialStateCliente);
+  // const [getClienteData, setGetClienteData] = useState(initialStateCliente);
 
-  const [getTelefono, setGetTelefono] = useState(initialStateTelefono);
+  // const [getTelefono, setGetTelefono] = useState(initialStateTelefono);
 
   const {
     nombre,
@@ -219,8 +207,8 @@ export const Cliente = ({
         <TextInput
           label="Correo"
           mode={"outlined"}
-          value={correos}
-          onChangeText={(value) => handleChangeCliente(value, "correos")}
+          value={correos[0]}
+          onChangeText={(value) => handleChangeCliente([value], "correos")}
         />
       </View>
       <View style={styles.rowStyle}>

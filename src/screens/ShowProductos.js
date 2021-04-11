@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
 
 import { COLORS, FONTS, SIZES } from "../../constants";
 
-export default function TrendingShoes({
+export default function ShowProductos({
   item,
   index,
   setSelectedItem,

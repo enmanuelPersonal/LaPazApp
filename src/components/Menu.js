@@ -4,13 +4,13 @@ import { Footer, FooterTab, Button, Text } from "native-base";
 
 import Icon from "react-native-vector-icons/Entypo";
 import IconAntDesign from "react-native-vector-icons/AntDesign";
-import IconStripe from "react-native-vector-icons/FontAwesome";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 export const Menu = ({ navigation }) => {
   const initState = {
     inicio: false,
     suscripcion: false,
-    cuotas: false,
+    perfil: false,
     carrito: false,
   };
   const [state, setstate] = useState({ ...initState, inicio: true });
@@ -38,6 +38,21 @@ export const Menu = ({ navigation }) => {
             inicio
           </Text>
         </Button>
+        <Button vertical onPress={() => Tap("perfil")}>
+          <Ionicons
+            name="person"
+            size={30}
+            color={state.perfil ? "#000" : "#A1A2A3"}
+          />
+          <Text
+            style={[
+              styles.text,
+              state.perfil ? { color: "#000" } : { color: "#A1A2A3" },
+            ]}
+          >
+            perfil
+          </Text>
+        </Button>
         <Button vertical onPress={() => Tap("suscripcion")}>
           <IconAntDesign
             name="filetext1"
@@ -54,21 +69,6 @@ export const Menu = ({ navigation }) => {
             ]}
           >
             Suscripcion
-          </Text>
-        </Button>
-        <Button vertical onPress={() => Tap("cuotas")}>
-          <IconStripe
-            name="cc-stripe"
-            size={30}
-            color={state.cuotas ? "#000" : "#A1A2A3"}
-          />
-          <Text
-            style={[
-              styles.text,
-              state.cuotas ? { color: "#000" } : { color: "#A1A2A3" },
-            ]}
-          >
-            cuotas
           </Text>
         </Button>
         <Button vertical onPress={() => Tap("carrito")}>

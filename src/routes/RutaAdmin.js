@@ -4,6 +4,7 @@ import Home from "../../src/screens/Home";
 import { Carrito } from "../../src/screens/Carrito";
 import { Menu } from "../components/Menu";
 import { Suscripcion } from "../screens/suscripcion/Suscripcion";
+import { Perfil } from "../screens/Perfil/Perfil";
 
 const Stack = createStackNavigator();
 
@@ -34,9 +35,16 @@ export const RutaAdmin = ({ navigation }) => {
             headerShown: false,
           }}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="suscripcion"
           component={Suscripcion}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="perfil"
+          component={Perfil}
           options={{
             headerShown: false,
           }}

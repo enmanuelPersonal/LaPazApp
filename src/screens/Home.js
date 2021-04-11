@@ -5,7 +5,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import AppContext from "../auth/AuthContext";
 
 import { images, COLORS, FONTS, SIZES } from "../../constants";
-import TrendingShoes from "./TrendingShoes";
+import ShowProductos from "./ShowProductos";
 import { RecentlyViewed } from "./RecentlyViewed";
 import { ModalDetail } from "./ModalDetail";
 import { post } from "../helpers/fetch";
@@ -114,7 +114,7 @@ const Home = () => {
             data={trending}
             keyExtractor={(item) => item.id.toString()}
             renderItem={({ item, index }) => (
-              <TrendingShoes
+              <ShowProductos
                 item={item}
                 index={index}
                 bgColor={"#585757"}
@@ -159,7 +159,7 @@ const Home = () => {
             data={flores}
             keyExtractor={(item) => item.id.toString()}
             renderItem={({ item, index }) => (
-              <TrendingShoes
+              <ShowProductos
                 item={item}
                 index={index}
                 bgColor={"#585757"}

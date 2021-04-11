@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { StyleSheet, View, Text, ScrollView, Alert } from "react-native";
 import { TextInput, Button } from "react-native-paper";
+import { useNavigation } from "@react-navigation/native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import DropDown from "react-native-paper-dropdown";
 import AppContext from "../../auth/AuthContext";
@@ -32,6 +33,7 @@ export const Suscripcion = () => {
       userData: { idEntidad, idUsuario },
     },
   } = useContext(AppContext);
+  const navigation = useNavigation();
   const [showPago, setShowPago] = useState(false);
   const [showDropDown, setShowDropDown] = useState(false);
   const [showDropDownEstado, setShowDropDownEstado] = useState(false);
@@ -50,8 +52,6 @@ export const Suscripcion = () => {
 
   const stados = [
     { label: "Proceso", value: "Proceso" },
-    { label: "Aceptada", value: "Aceptada" },
-    { label: "Cancelada", value: "Cancelada" },
   ];
 
   useEffect(() => {
@@ -125,6 +125,8 @@ export const Suscripcion = () => {
             [{ text: "OK", onPress: () => console.log("OK Pressed") }],
             { cancelable: false }
           );
+
+          navigation.navigate("ruta", { screen: "perfil" });
         } else {
           const res = await response.json();
           ShowAlert({ title: "Error", msj: res.message });
@@ -244,6 +246,7 @@ export const Suscripcion = () => {
           visible={showPago}
           monto={getMonto}
           title="Pagar suscripcion"
+          subTitulo={`Monto a Pagar: ${getMonto} $RD`}
           handleSave={handleSave}
           description={`Pago de sucripcion cliente ${getClienteData.nombre} ${getClienteData.apellido}`}
         />

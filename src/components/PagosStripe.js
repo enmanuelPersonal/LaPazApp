@@ -27,11 +27,12 @@ const initialState = {
 
 export const PagoStripe = ({
   setDialog,
-  monto,
+  monto = 0,
   visible,
   title,
   handleSave,
   description,
+  subTitulo,
 }) => {
   const [tarjeta, setTarjeta] = useState(initialState);
   const { number, exp_month, exp_year, cvc } = tarjeta;
@@ -96,14 +97,16 @@ export const PagoStripe = ({
                 onPress={() => setDialog(false)}
               />
             </View>
-
             <View
               style={{
                 justifyContent: "center",
-                width: "85%",
+                width: "100%",
                 height: "100%",
               }}
             >
+              <Text style={{ fontSize: 16, textAlign: "center" }}>
+                {subTitulo}
+              </Text>
               <View style={{ alignItems: "center" }}>
                 <Image
                   source={images.pago}
@@ -121,7 +124,7 @@ export const PagoStripe = ({
                     <Item
                       inlineLabel
                       last
-                      style={[styles.input, { width: "80%", marginRight: 20 }]}
+                      style={[styles.input, { width: "70%", marginRight: 20 }]}
                     >
                       <Input
                         placeholder="Numero Tarjeta"
@@ -184,7 +187,7 @@ export const PagoStripe = ({
             color="#000"
             onPress={handleSaveTarjeta}
           >
-            Guardar
+            Completar
           </Button>
         </Dialog.Actions>
       </Dialog>

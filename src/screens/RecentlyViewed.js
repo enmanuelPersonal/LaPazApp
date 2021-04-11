@@ -34,7 +34,7 @@ export const RecentlyViewed = ({
         }}
       >
         <Text style={{ color: COLORS.gray, ...FONTS.body3 }}>{item.name}</Text>
-        <Text style={{ ...FONTS.h3 }}>{item.price}</Text>
+        <Text style={{ ...FONTS.h3 }}>{item.price} $RD</Text>
       </View>
     </TouchableOpacity>
   );

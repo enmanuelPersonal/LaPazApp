@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   StyleSheet,
   View,
@@ -11,6 +11,8 @@ import { BlurView } from "@react-native-community/blur";
 
 import { COLORS, FONTS, SIZES } from "../../constants";
 import globalStyles from "../styles/global";
+import AppContext from "../auth/AuthContext";
+import { CARRITO } from "../auth/actions";
 
 export const ModalDetail = ({
   showAddToBagModal,
@@ -19,13 +21,31 @@ export const ModalDetail = ({
   selectedItem,
   bgColor,
 }) => {
+  const {
+    dispatch,
+    state: { carrito },
+  } = useContext(AppContext);
+
+  const handleAddCar = (value) => {
+    dispatch({
+      type: CARRITO,
+      payload: [
+        ...carrito,
+        {
+          ...value,
+          cant: 1,
+        },
+      ],
+    });
+    setSelectedItem(null);
+    setShowAddToBagModal(false);
+  };
   return (
     <Modal
       animationType="slide"
       transparent={true}
       visible={showAddToBagModal}
       onRequestClose={() => {
-        // Alert.alert("Modal has been closed.");
         console.log("cerrado");
       }}
     >
@@ -35,7 +55,6 @@ export const ModalDetail = ({
         blurAmount={20}
         reducedTransparencyFallbackColor="white"
       >
-        {/* Modal content */}
         <View
           style={{
             justifyContent: "center",
@@ -87,7 +106,7 @@ export const ModalDetail = ({
               ...FONTS.h1,
             }}
           >
-            {selectedItem.price}
+            {selectedItem.price} $RD
           </Text>
           <View style={{ flexDirection: "row" }}>
             <TouchableOpacity
@@ -119,10 +138,7 @@ export const ModalDetail = ({
                 justifyContent: "center",
                 backgroundColor: "#E1971E",
               }}
-              onPress={() => {
-                setSelectedItem(null);
-                setShowAddToBagModal(false);
-              }}
+              onPress={() => handleAddCar(selectedItem)}
             >
               <Text style={globalStyles.botonTexto}>Agregar al carrito</Text>
             </TouchableOpacity>
@@ -132,13 +148,3 @@ export const ModalDetail = ({
     </Modal>
   );
 };
-
-const styles = StyleSheet.create({
-  absolute: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
-  },
-});

@@ -8,8 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-import { images, COLORS, FONTS, SIZES } from "../../constants";
-import { CARRITO } from "../auth/actions";
+import { COLORS, FONTS, SIZES } from "../../constants";
 import AppContext from "../auth/AuthContext";
 import { CarItems } from "../components/CarItems";
 import { Stripe } from "../components/Stripe";
@@ -17,39 +16,22 @@ import { ModalDetail } from "./ModalDetail";
 
 export const Carrito = () => {
   const {
-    dispatch,
     state: { carrito },
   } = useContext(AppContext);
   const [showAddToBagModal, setShowAddToBagModal] = useState(false);
   const [showPayment, setShowPayment] = useState(false);
-  const [subTotal, setSubTotal] = useState(1042.00);
+  const [subTotal, setSubTotal] = useState(0);
   const [selectedItem, setSelectedItem] = useState(null);
-  const [recentlyViewed, setRecentlyViewed] = useState([
-    {
-      id: 0,
-      name: "Arreglo basico",
-      img: images.flor1,
-      cant: 1,
-      price: "$119",
-    },
-    {
-      id: 1,
-      name: "Ataud en caoba",
-      img: images.nikePegasus36,
-      cant: 5,
-      price: "$135",
-    },
-    {
-      id: 2,
-      name: "Arreglo intermedio",
-      img: images.flor3,
-      cant: 2,
-      price: "$124",
-    },
-  ]);
 
   useEffect(() => {
-    dispatch({ type: CARRITO, payload: recentlyViewed });
+    let total = 0;
+
+    carrito.forEach((producto) => {
+      let { cant, price } = producto;
+      total += cant * price;
+    });
+
+    setSubTotal(total);
   }, []);
 
   return (
@@ -75,6 +57,8 @@ export const Carrito = () => {
                 item={item}
                 setSelectedItem={setSelectedItem}
                 setShowAddToBagModal={setShowAddToBagModal}
+                setSubTotal={setSubTotal}
+                carrito={carrito}
               />
             )}
           />
@@ -84,11 +68,10 @@ export const Carrito = () => {
             style={{
               marginTop: SIZES.radius,
               marginHorizontal: SIZES.padding,
-              // marginRight: 270,
               ...FONTS.largeTitleBold,
             }}
           >
-            Sub Total: <Text style={{fontSize: 25}}>   ${subTotal}</Text>
+            Sub Total: <Text style={{ fontSize: 25 }}> ${subTotal}</Text>
           </Text>
         </View>
         <View>
@@ -121,11 +104,11 @@ export const Carrito = () => {
             selectedItem={selectedItem}
           />
         )}
-          {showPayment && (
+        {showPayment && (
           <Stripe
-          showPayment={showPayment}
-          setShowPayment={setShowPayment}
-          monto={subTotal}
+            showPayment={showPayment}
+            setShowPayment={setShowPayment}
+            monto={subTotal}
           />
         )}
       </View>

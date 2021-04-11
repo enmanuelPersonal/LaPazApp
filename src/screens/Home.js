@@ -23,19 +23,19 @@ const Home = () => {
       id: 0,
       name: "Ataud de caoba",
       img: images.nikePegasus36,
-      price: "$186",
+      price: 186,
     },
     {
       id: 1,
       name: "Ataud de caoba basica",
       img: images.nikeMetcon5Black,
-      price: "$135",
+      price: 135,
     },
     {
       id: 2,
       name: "Ataud de caoba normal",
       img: images.nikeZoomKobe1Proto,
-      price: "$199",
+      price: 199,
     },
   ]);
 
@@ -44,19 +44,19 @@ const Home = () => {
       id: 0,
       name: "Arreglo full",
       img: images.flor1,
-      price: "$186",
+      price: 186,
     },
     {
       id: 1,
       name: "Arreglo basico",
       img: images.flor2,
-      price: "$135",
+      price: 135,
     },
     {
       id: 2,
       name: "Arreglo intermedio",
       img: images.flor3,
-      price: "$199",
+      price: 199,
     },
   ]);
 
@@ -65,19 +65,19 @@ const Home = () => {
       id: 0,
       name: "Lapida normal",
       img: images.lapida,
-      price: "$119",
+      price: 119,
     },
     {
       id: 1,
       name: "Ataud de caoba",
       img: images.nikePegasus36,
-      price: "$135",
+      price: 135,
     },
     {
       id: 2,
       name: "Lapida en marmol",
       img: images.lapida1,
-      price: "$124",
+      price: 124,
     },
   ]);
 

@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { BlurView } from "@react-native-community/blur";
 
-import { COLORS, FONTS, SIZES } from "../../constants";
+import { COLORS, FONTS, SIZES, REACT_APP_API_URL } from "../../constants";
 import globalStyles from "../styles/global";
 import AppContext from "../auth/AuthContext";
 import { CARRITO } from "../auth/actions";
@@ -70,7 +70,7 @@ export const ModalDetail = ({
             }}
           >
             <Image
-              source={selectedItem.img}
+             source={{uri:`${REACT_APP_API_URL}uploads/${selectedItem.img}`}}
               resizeMode="contain"
               style={{
                 width: "90%",
@@ -84,19 +84,20 @@ export const ModalDetail = ({
               marginHorizontal: SIZES.padding,
               color: COLORS.black,
               ...FONTS.body2,
+              fontWeight: "bold"
             }}
           >
             {selectedItem.name}
           </Text>
           <Text
             style={{
-              marginTop: SIZES.base / 2,
+              marginTop: SIZES.base,
               marginHorizontal: SIZES.padding,
               color: COLORS.black,
               ...FONTS.body3,
             }}
           >
-            {selectedItem.type}
+            {selectedItem.descripcion}
           </Text>
           <Text
             style={{

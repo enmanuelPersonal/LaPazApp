@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { StyleSheet, View, Text, FlatList, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Ionicons from "react-native-vector-icons/Ionicons";
@@ -8,7 +8,7 @@ import { images, COLORS, FONTS, SIZES } from "../../constants";
 import ShowProductos from "./ShowProductos";
 import { RecentlyViewed } from "./RecentlyViewed";
 import { ModalDetail } from "./ModalDetail";
-import { post } from "../helpers/fetch";
+import { get, post } from "../helpers/fetch";
 import { cache } from "../utils/cache";
 import { RESET_STATES, USER_LOGOUT } from "../auth/actions";
 
@@ -18,68 +18,87 @@ const Home = () => {
   const [showAddToBagModal, setShowAddToBagModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const colors = ["#F7BE5D", "#F75D5D", "#F49A5C", "#804C28", "#F85342"];
-  const [trending, setTrending] = useState([
-    {
-      id: 0,
-      name: "Ataud de caoba",
-      img: images.nikePegasus36,
-      price: 186,
-    },
-    {
-      id: 1,
-      name: "Ataud de caoba basica",
-      img: images.nikeMetcon5Black,
-      price: 135,
-    },
-    {
-      id: 2,
-      name: "Ataud de caoba normal",
-      img: images.nikeZoomKobe1Proto,
-      price: 199,
-    },
-  ]);
+  const [ataudes, setAtaudes] = useState([]);
+  const [flores, setFlores] = useState([]);
+  const [lapidas, setLapidas] = useState([]);
 
-  const [flores, setFlores] = useState([
-    {
-      id: 0,
-      name: "Arreglo full",
-      img: images.flor1,
-      price: 186,
-    },
-    {
-      id: 1,
-      name: "Arreglo basico",
-      img: images.flor2,
-      price: 135,
-    },
-    {
-      id: 2,
-      name: "Arreglo intermedio",
-      img: images.flor3,
-      price: 199,
-    },
-  ]);
+  useEffect(() => {
+    const fetchAtaudes = async () => {
+      await get(`producto/categoria`)
+        .then((res) => res.json())
+        .then(({ data }) => {
+          const parseData = data.map(
+            ({
+              idProducto,
+              descripcion,
+              nombre,
+              log: { precio },
+              imagenes,
+            }) => ({
+              id: idProducto,
+              name: nombre,
+              descripcion,
+              img: imagenes[0].url,
+              price: precio,
+            })
+          );
+          setAtaudes(parseData);
+        })
+        .catch(() => {});
+    };
 
-  const [recentlyViewed, setRecentlyViewed] = useState([
-    {
-      id: 0,
-      name: "Lapida normal",
-      img: images.lapida,
-      price: 119,
-    },
-    {
-      id: 1,
-      name: "Ataud de caoba",
-      img: images.nikePegasus36,
-      price: 135,
-    },
-    {
-      id: 2,
-      name: "Lapida en marmol",
-      img: images.lapida1,
-      price: 124,
-    },
-  ]);
+    const fetchArreglos = async () => {
+      await get(`producto/categoria?categoria=arreglos`)
+        .then((res) => res.json())
+        .then(({ data }) => {
+          const parseData = data.map(
+            ({
+              idProducto,
+              descripcion,
+              nombre,
+              log: { precio },
+              imagenes,
+            }) => ({
+              id: idProducto,
+              name: nombre,
+              descripcion,
+              img: imagenes[0].url,
+              price: precio,
+            })
+          );
+          setFlores(parseData);
+        })
+        .catch(() => {});
+    };
+
+    const fetchLapidas = async () => {
+      await get(`producto/categoria?categoria=lapidas`)
+        .then((res) => res.json())
+        .then(({ data }) => {
+          const parseData = data.map(
+            ({
+              idProducto,
+              descripcion,
+              nombre,
+              log: { precio },
+              imagenes,
+            }) => ({
+              id: idProducto,
+              name: nombre,
+              descripcion,
+              img: imagenes[0].url,
+              price: precio,
+            })
+          );
+          setLapidas(parseData);
+        })
+        .catch(() => {});
+    };
+
+    fetchAtaudes();
+    fetchLapidas();
+    fetchArreglos();
+  }, []);
 
   const handleLogout = async () => {
     post("auth/logout").then(async () => {
@@ -111,7 +130,7 @@ const Home = () => {
           <FlatList
             horizontal
             showsHorizontalScrollIndicator={false}
-            data={trending}
+            data={ataudes}
             keyExtractor={(item) => item.id.toString()}
             renderItem={({ item, index }) => (
               <ShowProductos
@@ -140,7 +159,7 @@ const Home = () => {
           <View style={{ flex: 1, paddingBottom: SIZES.padding }}>
             <FlatList
               showsVerticalScrollIndicator={false}
-              data={recentlyViewed}
+              data={lapidas}
               keyExtractor={(item) => item.id.toString()}
               renderItem={({ item }) => (
                 <RecentlyViewed

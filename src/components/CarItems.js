@@ -4,7 +4,7 @@ import { Button, Paragraph, Dialog, Portal } from "react-native-paper";
 import IconAntDesign from "react-native-vector-icons/AntDesign";
 import IconEntypo from "react-native-vector-icons/Entypo";
 
-import { COLORS, FONTS, SIZES } from "../../constants";
+import { COLORS, FONTS, SIZES, REACT_APP_API_URL } from "../../constants";
 import { CARRITO } from "../auth/actions";
 import AppContext from "../auth/AuthContext";
 
@@ -81,7 +81,7 @@ export const CarItems = ({
           style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
         >
           <Image
-            source={item.img}
+           source={{uri:`${REACT_APP_API_URL}uploads/${item.img}`}}
             resizeMode="contain"
             style={{
               width: 130,

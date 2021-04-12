@@ -7,17 +7,23 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import { COLORS, FONTS, SIZES } from "../../constants";
 import AppContext from "../auth/AuthContext";
+import { ShowAlert } from "../components/Alert";
 import { CarItems } from "../components/CarItems";
-import { Stripe } from "../components/Stripe";
 import { ModalDetail } from "./ModalDetail";
+import { PagoStripe } from "../components/PagosStripe";
 
 export const Carrito = () => {
   const {
-    state: { carrito },
+    state: {
+      carrito,
+      userData: { idEntidad },
+    },
   } = useContext(AppContext);
+  const navigation = useNavigation();
   const [showAddToBagModal, setShowAddToBagModal] = useState(false);
   const [showPayment, setShowPayment] = useState(false);
   const [subTotal, setSubTotal] = useState(0);
@@ -33,6 +39,45 @@ export const Carrito = () => {
 
     setSubTotal(total);
   }, []);
+
+  const handleSave = () => {
+    const userData = {};
+    console.log("Entro");
+    const parseDetalle = carrito.map(({ id, price, cant }) => ({
+      idProducto: id,
+      cantidad: cant,
+      precio: price,
+    }));
+
+    Object.assign(
+      userData,
+      { detalle: parseDetalle },
+      { idEntidad },
+      { total: subTotal }
+    );
+    console.log(userData);
+    // return post("venta", userData)
+    //   .then(async (response) => {
+    //     if (response.status === 201) {
+    //       ShowAlert({
+    //         title: "Correcto!",
+    //         msj:
+    //           "Compra realizada correctamente!",
+    //       });
+
+    //       navigation.navigate("ruta", { screen: "perfil" });
+    //     } else {
+    //       const res = await response.json();
+    //       ShowAlert({ title: "Error", msj: res.message });
+    //     }
+    //   })
+    //   .catch((err) => {
+    //     ShowAlert({
+    //       title: "Error",
+    //       msj: "Verifique que todos este correcto",
+    //     });
+    //   });
+  };
 
   return (
     <ScrollView showsVerticalScrollIndicator style={styles.container}>
@@ -86,9 +131,7 @@ export const Carrito = () => {
               justifyContent: "center",
               backgroundColor: "#2EB22A",
             }}
-            onPress={() => {
-              setShowPayment(true);
-            }}
+            onPress={() => setShowPayment(true)}
           >
             <Text style={{ color: COLORS.white, ...FONTS.largeTitleBold }}>
               Pagar
@@ -105,10 +148,14 @@ export const Carrito = () => {
           />
         )}
         {showPayment && (
-          <Stripe
-            showPayment={showPayment}
-            setShowPayment={setShowPayment}
+          <PagoStripe
+            setDialog={setShowPayment}
+            visible={showPayment}
             monto={subTotal}
+            title="Pagar su compra"
+            subTitulo={`Monto a Pagar: ${subTotal} $RD`}
+            handleSave={handleSave}
+            description={`Pago de compra de productos del cliente`}
           />
         )}
       </View>

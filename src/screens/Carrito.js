@@ -15,9 +15,12 @@ import { ShowAlert } from "../components/Alert";
 import { CarItems } from "../components/CarItems";
 import { ModalDetail } from "./ModalDetail";
 import { PagoStripe } from "../components/PagosStripe";
+import { post } from "../helpers/fetch";
+import { CARRITO } from "../auth/actions";
 
 export const Carrito = () => {
   const {
+    dispatch,
     state: {
       carrito,
       userData: { idEntidad },
@@ -42,7 +45,6 @@ export const Carrito = () => {
 
   const handleSave = () => {
     const userData = {};
-    console.log("Entro");
     const parseDetalle = carrito.map(({ id, price, cant }) => ({
       idProducto: id,
       cantidad: cant,
@@ -55,28 +57,32 @@ export const Carrito = () => {
       { idEntidad },
       { total: subTotal }
     );
-    console.log(userData);
-    // return post("venta", userData)
-    //   .then(async (response) => {
-    //     if (response.status === 201) {
-    //       ShowAlert({
-    //         title: "Correcto!",
-    //         msj:
-    //           "Compra realizada correctamente!",
-    //       });
 
-    //       navigation.navigate("ruta", { screen: "perfil" });
-    //     } else {
-    //       const res = await response.json();
-    //       ShowAlert({ title: "Error", msj: res.message });
-    //     }
-    //   })
-    //   .catch((err) => {
-    //     ShowAlert({
-    //       title: "Error",
-    //       msj: "Verifique que todos este correcto",
-    //     });
-    //   });
+    return post("venta", userData)
+      .then(async (response) => {
+        if (response.status === 201) {
+          ShowAlert({
+            title: "Correcto!",
+            msj: "Compra realizada correctamente!",
+          });
+          dispatch({
+            type: CARRITO,
+            payload: [],
+          });
+          setSubTotal(0);
+          setShowPayment(false);
+          navigation.navigate("ruta", { screen: "perfil" });
+        } else {
+          const res = await response.json();
+          ShowAlert({ title: "Error", msj: res.message });
+        }
+      })
+      .catch((err) => {
+        ShowAlert({
+          title: "Error",
+          msj: "Verifique que todos este correcto",
+        });
+      });
   };
 
   return (

@@ -1,6 +1,6 @@
 import { cache } from "../utils/cache";
 
-const REACT_APP_API_URL = "http://192.168.0.107:8080/";
+const REACT_APP_API_URL = "http://10.0.0.30:8080/";
 
 export const get = async (url) => {
   const token = await cache.get("LaPaz_auth_token");

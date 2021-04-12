@@ -4,10 +4,12 @@ import { useNavigation } from "@react-navigation/native";
 import { TextInput, Button } from "react-native-paper";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
+import Feather from "react-native-vector-icons/Feather";
 import AppContext from "../../auth/AuthContext";
-import { get } from "../../helpers/fetch";
+import { get, post } from "../../helpers/fetch";
 import { formatDate } from "../../helpers/formatDate";
 import { PagoStripe } from "../../components/PagosStripe";
+import { ShowAlert } from "../../components/Alert";
 
 const initialState = {
   statusSuscripcion: "Proceso",
@@ -18,6 +20,14 @@ const initialState = {
   fecha: "",
   cuotas: 0,
   idSuscripcion: "",
+};
+
+const initialCompra = {
+  numFactura: "",
+  total: "",
+  status: false,
+  createdAt: "",
+  detalle: [],
 };
 
 export const Perfil = () => {
@@ -31,6 +41,7 @@ export const Perfil = () => {
   const [suscripcion, setSuscripcion] = useState(initialState);
   const [isSuscrito, setIsSuscrito] = useState(false);
   const [meses, setMeses] = useState("1");
+  const [compra, setCompra] = useState(initialCompra);
 
   const {
     statusSuscripcion,
@@ -42,6 +53,8 @@ export const Perfil = () => {
     cuotas,
     idSuscripcion,
   } = suscripcion;
+
+  const { detalle, total, createdAt } = compra;
 
   useEffect(() => {
     const fetchSuscripcion = async () => {
@@ -55,6 +68,17 @@ export const Perfil = () => {
         })
         .catch(() => {});
     };
+    const fetchCompra = async () => {
+      await get(`venta/${idEntidad}`)
+        .then((res) => res.json())
+        .then(({ data }) => {
+          if (data.length) {
+            setCompra(data[0]);
+          }
+        })
+        .catch(() => {});
+    };
+    fetchCompra();
     fetchSuscripcion();
   }, []);
 
@@ -74,6 +98,7 @@ export const Perfil = () => {
             title: "Correcto!",
             msj: "Su pago ha sudo procesado correctamente!",
           });
+          setShowPago(false);
           navigation.navigate("ruta", { screen: "perfil" });
         } else {
           const res = await response.json();
@@ -200,6 +225,66 @@ export const Perfil = () => {
               </View>
             </View>
           )}
+
+          {detalle.length ? (
+            <View style={styles.containerStyle}>
+              <View style={{ flexDirection: "row", alignItems: "center" }}>
+                <Feather name="shopping-cart" size={30} color="#000" />
+                <Text
+                  style={{
+                    color: "#000",
+                    fontSize: 20,
+                    fontWeight: "bold",
+                    marginLeft: 5,
+                  }}
+                >
+                  Compra
+                </Text>
+              </View>
+              <View style={{ ...styles.rowStyle, marginTop: 20 }}>
+                <View style={{ width: "40%" }}>
+                  <Text style={styles.textHead}>Total:</Text>
+                </View>
+                <View style={{ width: "60%" }}>
+                  <Text style={styles.textRes}>{total} $RD</Text>
+                </View>
+              </View>
+              <View style={{ ...styles.rowStyle }}>
+                <View style={{ width: "40%" }}>
+                  <Text style={styles.textHead}>Fecha:</Text>
+                </View>
+                <View style={{ width: "60%" }}>
+                  <Text style={styles.textRes}>{formatDate(createdAt)}</Text>
+                </View>
+              </View>
+              <View style={{ ...styles.rowStyle, marginTop: 20 }}>
+                <View style={{ width: "60%" }}>
+                  <Text style={styles.textHead}>Nombre:</Text>
+                </View>
+                <View style={{ width: "20%" }}>
+                  <Text style={styles.textHead}>cantidad:</Text>
+                </View>
+                <View style={{ width: "20%" }}>
+                  <Text style={styles.textHead}>Precio:</Text>
+                </View>
+              </View>
+              {detalle.map(({ cantidad, precio, nombre }, i) => (
+                <View style={{ ...styles.rowStyle }} key={i}>
+                  <View style={{ width: "60%" }}>
+                    <Text>{nombre}</Text>
+                  </View>
+                  <View style={{ width: "20%" }}>
+                    <Text>{cantidad}</Text>
+                  </View>
+                  <View style={{ width: "20%" }}>
+                    <Text>{precio}</Text>
+                  </View>
+                </View>
+              ))}
+            </View>
+          ) : (
+            <Text></Text>
+          )}
         </View>
       ) : (
         <View style={styles.containerStyle}>
@@ -226,10 +311,6 @@ export const Perfil = () => {
           </View>
         </View>
       )}
-      {/* {tipoPlan === "Aceptado" && (
-       
-      )} */}
-
       {showPago && (
         <PagoStripe
           setDialog={setShowPago}

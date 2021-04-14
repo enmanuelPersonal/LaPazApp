@@ -6,7 +6,7 @@ import Fontisto from "react-native-vector-icons/Fontisto";
 import DropDown from "react-native-paper-dropdown";
 import { get } from "../../helpers/fetch";
 import { FechaNacimiento } from "../../components/FechaNacimiento";
-import { formatDate } from "../../helpers/formatDate";
+import { formatDatePariente } from "../../helpers/formatDate";
 
 const initialStatePariente = {
   nombre: "",
@@ -101,7 +101,7 @@ export const Parientes = ({ setParientes, parientes }) => {
             }
           : "",
       },
-      { nacimiento: formatDate(nacimiento) },
+      { nacimiento: formatDatePariente(nacimiento) },
       { sexo }
     );
     setParientes([...parientes, { ...userData }]);
@@ -212,13 +212,7 @@ export const Parientes = ({ setParientes, parientes }) => {
           <Button
             color={nacimiento ? "#28AE26" : "#000"}
             style={{ borderRadius: 10 }}
-            icon={() => (
-              <Fontisto
-                name="date"
-                size={25}
-                color="#fff"
-              />
-            )}
+            icon={() => <Fontisto name="date" size={25} color="#fff" />}
             mode="contained"
             onPress={() => setShowFechaCliente(true)}
           >

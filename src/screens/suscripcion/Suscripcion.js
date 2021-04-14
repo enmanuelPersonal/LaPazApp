@@ -50,9 +50,7 @@ export const Suscripcion = () => {
   const [getMonto, setGetMonto] = useState("");
   const [getCuotas, setGetCuotas] = useState("");
 
-  const stados = [
-    { label: "Proceso", value: "Proceso" },
-  ];
+  const stados = [{ label: "Proceso", value: "Proceso" }];
 
   useEffect(() => {
     const fetchTypePlan = async () => {

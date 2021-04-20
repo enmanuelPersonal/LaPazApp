@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* NikeShoesEcommerceAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* NikeShoesEcommerceAppTests.m */; };
+		00E356F31AD99517003FC87E /* LaPazAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* LaPazAppTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2DCD954D1E0B4F2C00145EB5 /* NikeShoesEcommerceAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* NikeShoesEcommerceAppTests.m */; };
-		4F0B6EC3934F1C570098FF26 /* libPods-NikeShoesEcommerceApp-NikeShoesEcommerceAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B22B3BE1A35003C8AE1FC22 /* libPods-NikeShoesEcommerceApp-NikeShoesEcommerceAppTests.a */; };
-		79A711A33830424EB0290A4C /* libPods-NikeShoesEcommerceApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 389FAAB5F5D4490F1DD3F20E /* libPods-NikeShoesEcommerceApp.a */; };
+		2DCD954D1E0B4F2C00145EB5 /* LaPazAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* LaPazAppTests.m */; };
+		4F0B6EC3934F1C570098FF26 /* libPods-LaPazApp-LaPazAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B22B3BE1A35003C8AE1FC22 /* libPods-LaPazApp-LaPazAppTests.a */; };
+		79A711A33830424EB0290A4C /* libPods-LaPazApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 389FAAB5F5D4490F1DD3F20E /* libPods-LaPazApp.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		AC81E4E9CFD60475C9189FF4 /* libPods-NikeShoesEcommerceApp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F12B2F12AFB4149D4462757F /* libPods-NikeShoesEcommerceApp-tvOSTests.a */; };
-		FCCEA747587384C448EBCD4F /* libPods-NikeShoesEcommerceApp-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE3EEFEAF0596C3B118E74B /* libPods-NikeShoesEcommerceApp-tvOS.a */; };
+		AC81E4E9CFD60475C9189FF4 /* libPods-LaPazApp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F12B2F12AFB4149D4462757F /* libPods-LaPazApp-tvOSTests.a */; };
+		FCCEA747587384C448EBCD4F /* libPods-LaPazApp-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE3EEFEAF0596C3B118E74B /* libPods-LaPazApp-tvOS.a */; };
 		126BFD6F319C49C38D1B4901 /* CarmenSans-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0384A8719114F74B7285691 /* CarmenSans-SemiBold.otf */; };
 		1626C2B7F3D0438AB22AB6BB /* CarmenSans-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE439C389770429E8CB74BB3 /* CarmenSans-Thin.otf */; };
 		58F0CEE04F124712B7C4586F /* CocoGothic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0219B354D8634BC696685502 /* CocoGothic-Bold.ttf */; };
@@ -33,45 +33,45 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = NikeShoesEcommerceApp;
+			remoteInfo = LaPazApp;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "NikeShoesEcommerceApp-tvOS";
+			remoteInfo = "LaPazApp-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* NikeShoesEcommerceAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NikeShoesEcommerceAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* LaPazAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LaPazAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* NikeShoesEcommerceAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NikeShoesEcommerceAppTests.m; sourceTree = "<group>"; };
-		0B22B3BE1A35003C8AE1FC22 /* libPods-NikeShoesEcommerceApp-NikeShoesEcommerceAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NikeShoesEcommerceApp-NikeShoesEcommerceAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07F961A680F5B00A75B9A /* NikeShoesEcommerceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NikeShoesEcommerceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = NikeShoesEcommerceApp/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = NikeShoesEcommerceApp/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = NikeShoesEcommerceApp/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = NikeShoesEcommerceApp/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = NikeShoesEcommerceApp/main.m; sourceTree = "<group>"; };
-		2812913D3CB69A73FCB33A6F /* Pods-NikeShoesEcommerceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikeShoesEcommerceApp.debug.xcconfig"; path = "Target Support Files/Pods-NikeShoesEcommerceApp/Pods-NikeShoesEcommerceApp.debug.xcconfig"; sourceTree = "<group>"; };
-		2D02E47B1E0B4A5D006451C7 /* NikeShoesEcommerceApp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NikeShoesEcommerceApp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* NikeShoesEcommerceApp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NikeShoesEcommerceApp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		389FAAB5F5D4490F1DD3F20E /* libPods-NikeShoesEcommerceApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NikeShoesEcommerceApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E1477DE34B0FEE8F02BD266 /* Pods-NikeShoesEcommerceApp-NikeShoesEcommerceAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikeShoesEcommerceApp-NikeShoesEcommerceAppTests.release.xcconfig"; path = "Target Support Files/Pods-NikeShoesEcommerceApp-NikeShoesEcommerceAppTests/Pods-NikeShoesEcommerceApp-NikeShoesEcommerceAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = NikeShoesEcommerceApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9DBDC45D5954332564858962 /* Pods-NikeShoesEcommerceApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikeShoesEcommerceApp.release.xcconfig"; path = "Target Support Files/Pods-NikeShoesEcommerceApp/Pods-NikeShoesEcommerceApp.release.xcconfig"; sourceTree = "<group>"; };
-		AADA0CCFB3E5D9C8B2FA22A7 /* Pods-NikeShoesEcommerceApp-NikeShoesEcommerceAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikeShoesEcommerceApp-NikeShoesEcommerceAppTests.debug.xcconfig"; path = "Target Support Files/Pods-NikeShoesEcommerceApp-NikeShoesEcommerceAppTests/Pods-NikeShoesEcommerceApp-NikeShoesEcommerceAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		BDDA9B89AE906F2064239FDD /* Pods-NikeShoesEcommerceApp-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikeShoesEcommerceApp-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-NikeShoesEcommerceApp-tvOS/Pods-NikeShoesEcommerceApp-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		C80B39A2E07EA04DADA13D19 /* Pods-NikeShoesEcommerceApp-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikeShoesEcommerceApp-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-NikeShoesEcommerceApp-tvOSTests/Pods-NikeShoesEcommerceApp-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C9BF40C71C7DEB98213AD4DE /* Pods-NikeShoesEcommerceApp-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikeShoesEcommerceApp-tvOS.release.xcconfig"; path = "Target Support Files/Pods-NikeShoesEcommerceApp-tvOS/Pods-NikeShoesEcommerceApp-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		CC44094A1544B6247177AC92 /* Pods-NikeShoesEcommerceApp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikeShoesEcommerceApp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-NikeShoesEcommerceApp-tvOSTests/Pods-NikeShoesEcommerceApp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* LaPazAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaPazAppTests.m; sourceTree = "<group>"; };
+		0B22B3BE1A35003C8AE1FC22 /* libPods-LaPazApp-LaPazAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LaPazApp-LaPazAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* LaPazApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaPazApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = LaPazApp/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = LaPazApp/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = LaPazApp/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = LaPazApp/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = LaPazApp/main.m; sourceTree = "<group>"; };
+		2812913D3CB69A73FCB33A6F /* Pods-LaPazApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaPazApp.debug.xcconfig"; path = "Target Support Files/Pods-LaPazApp/Pods-LaPazApp.debug.xcconfig"; sourceTree = "<group>"; };
+		2D02E47B1E0B4A5D006451C7 /* LaPazApp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LaPazApp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* LaPazApp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LaPazApp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		389FAAB5F5D4490F1DD3F20E /* libPods-LaPazApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LaPazApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E1477DE34B0FEE8F02BD266 /* Pods-LaPazApp-LaPazAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaPazApp-LaPazAppTests.release.xcconfig"; path = "Target Support Files/Pods-LaPazApp-LaPazAppTests/Pods-LaPazApp-LaPazAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = LaPazApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9DBDC45D5954332564858962 /* Pods-LaPazApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaPazApp.release.xcconfig"; path = "Target Support Files/Pods-LaPazApp/Pods-LaPazApp.release.xcconfig"; sourceTree = "<group>"; };
+		AADA0CCFB3E5D9C8B2FA22A7 /* Pods-LaPazApp-LaPazAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaPazApp-LaPazAppTests.debug.xcconfig"; path = "Target Support Files/Pods-LaPazApp-LaPazAppTests/Pods-LaPazApp-LaPazAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BDDA9B89AE906F2064239FDD /* Pods-LaPazApp-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaPazApp-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-LaPazApp-tvOS/Pods-LaPazApp-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		C80B39A2E07EA04DADA13D19 /* Pods-LaPazApp-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaPazApp-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-LaPazApp-tvOSTests/Pods-LaPazApp-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C9BF40C71C7DEB98213AD4DE /* Pods-LaPazApp-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaPazApp-tvOS.release.xcconfig"; path = "Target Support Files/Pods-LaPazApp-tvOS/Pods-LaPazApp-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		CC44094A1544B6247177AC92 /* Pods-LaPazApp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaPazApp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-LaPazApp-tvOSTests/Pods-LaPazApp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		F12B2F12AFB4149D4462757F /* libPods-NikeShoesEcommerceApp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NikeShoesEcommerceApp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FAE3EEFEAF0596C3B118E74B /* libPods-NikeShoesEcommerceApp-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NikeShoesEcommerceApp-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F12B2F12AFB4149D4462757F /* libPods-LaPazApp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LaPazApp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAE3EEFEAF0596C3B118E74B /* libPods-LaPazApp-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LaPazApp-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0384A8719114F74B7285691 /* CarmenSans-SemiBold.otf */ = {isa = PBXFileReference; name = "CarmenSans-SemiBold.otf"; path = "../assets/fonts/CarmenSans-SemiBold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		EE439C389770429E8CB74BB3 /* CarmenSans-Thin.otf */ = {isa = PBXFileReference; name = "CarmenSans-Thin.otf"; path = "../assets/fonts/CarmenSans-Thin.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		0219B354D8634BC696685502 /* CocoGothic-Bold.ttf */ = {isa = PBXFileReference; name = "CocoGothic-Bold.ttf"; path = "../assets/fonts/CocoGothic-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
@@ -84,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F0B6EC3934F1C570098FF26 /* libPods-NikeShoesEcommerceApp-NikeShoesEcommerceAppTests.a in Frameworks */,
+				4F0B6EC3934F1C570098FF26 /* libPods-LaPazApp-LaPazAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79A711A33830424EB0290A4C /* libPods-NikeShoesEcommerceApp.a in Frameworks */,
+				79A711A33830424EB0290A4C /* libPods-LaPazApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCCEA747587384C448EBCD4F /* libPods-NikeShoesEcommerceApp-tvOS.a in Frameworks */,
+				FCCEA747587384C448EBCD4F /* libPods-LaPazApp-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,20 +108,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC81E4E9CFD60475C9189FF4 /* libPods-NikeShoesEcommerceApp-tvOSTests.a in Frameworks */,
+				AC81E4E9CFD60475C9189FF4 /* libPods-LaPazApp-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* NikeShoesEcommerceAppTests */ = {
+		00E356EF1AD99517003FC87E /* LaPazAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* NikeShoesEcommerceAppTests.m */,
+				00E356F21AD99517003FC87E /* LaPazAppTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = NikeShoesEcommerceAppTests;
+			path = LaPazAppTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -132,7 +132,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* NikeShoesEcommerceApp */ = {
+		13B07FAE1A68108700A75B9A /* LaPazApp */ = {
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -143,7 +143,7 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = NikeShoesEcommerceApp;
+			name = LaPazApp;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -151,10 +151,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				389FAAB5F5D4490F1DD3F20E /* libPods-NikeShoesEcommerceApp.a */,
-				0B22B3BE1A35003C8AE1FC22 /* libPods-NikeShoesEcommerceApp-NikeShoesEcommerceAppTests.a */,
-				FAE3EEFEAF0596C3B118E74B /* libPods-NikeShoesEcommerceApp-tvOS.a */,
-				F12B2F12AFB4149D4462757F /* libPods-NikeShoesEcommerceApp-tvOSTests.a */,
+				389FAAB5F5D4490F1DD3F20E /* libPods-LaPazApp.a */,
+				0B22B3BE1A35003C8AE1FC22 /* libPods-LaPazApp-LaPazAppTests.a */,
+				FAE3EEFEAF0596C3B118E74B /* libPods-LaPazApp-tvOS.a */,
+				F12B2F12AFB4149D4462757F /* libPods-LaPazApp-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -181,9 +181,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* NikeShoesEcommerceApp */,
+				13B07FAE1A68108700A75B9A /* LaPazApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* NikeShoesEcommerceAppTests */,
+				00E356EF1AD99517003FC87E /* LaPazAppTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				FFCE15702AFF02279D346922 /* Pods */,
@@ -197,10 +197,10 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* NikeShoesEcommerceApp.app */,
-				00E356EE1AD99517003FC87E /* NikeShoesEcommerceAppTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* NikeShoesEcommerceApp-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* NikeShoesEcommerceApp-tvOSTests.xctest */,
+				13B07F961A680F5B00A75B9A /* LaPazApp.app */,
+				00E356EE1AD99517003FC87E /* LaPazAppTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* LaPazApp-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* LaPazApp-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -208,14 +208,14 @@
 		FFCE15702AFF02279D346922 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2812913D3CB69A73FCB33A6F /* Pods-NikeShoesEcommerceApp.debug.xcconfig */,
-				9DBDC45D5954332564858962 /* Pods-NikeShoesEcommerceApp.release.xcconfig */,
-				AADA0CCFB3E5D9C8B2FA22A7 /* Pods-NikeShoesEcommerceApp-NikeShoesEcommerceAppTests.debug.xcconfig */,
-				7E1477DE34B0FEE8F02BD266 /* Pods-NikeShoesEcommerceApp-NikeShoesEcommerceAppTests.release.xcconfig */,
-				BDDA9B89AE906F2064239FDD /* Pods-NikeShoesEcommerceApp-tvOS.debug.xcconfig */,
-				C9BF40C71C7DEB98213AD4DE /* Pods-NikeShoesEcommerceApp-tvOS.release.xcconfig */,
-				C80B39A2E07EA04DADA13D19 /* Pods-NikeShoesEcommerceApp-tvOSTests.debug.xcconfig */,
-				CC44094A1544B6247177AC92 /* Pods-NikeShoesEcommerceApp-tvOSTests.release.xcconfig */,
+				2812913D3CB69A73FCB33A6F /* Pods-LaPazApp.debug.xcconfig */,
+				9DBDC45D5954332564858962 /* Pods-LaPazApp.release.xcconfig */,
+				AADA0CCFB3E5D9C8B2FA22A7 /* Pods-LaPazApp-LaPazAppTests.debug.xcconfig */,
+				7E1477DE34B0FEE8F02BD266 /* Pods-LaPazApp-LaPazAppTests.release.xcconfig */,
+				BDDA9B89AE906F2064239FDD /* Pods-LaPazApp-tvOS.debug.xcconfig */,
+				C9BF40C71C7DEB98213AD4DE /* Pods-LaPazApp-tvOS.release.xcconfig */,
+				C80B39A2E07EA04DADA13D19 /* Pods-LaPazApp-tvOSTests.debug.xcconfig */,
+				CC44094A1544B6247177AC92 /* Pods-LaPazApp-tvOSTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -223,9 +223,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* NikeShoesEcommerceAppTests */ = {
+		00E356ED1AD99517003FC87E /* LaPazAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "NikeShoesEcommerceAppTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "LaPazAppTests" */;
 			buildPhases = (
 				4C114A6495B93000C6CE3BA7 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -238,14 +238,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = NikeShoesEcommerceAppTests;
-			productName = NikeShoesEcommerceAppTests;
-			productReference = 00E356EE1AD99517003FC87E /* NikeShoesEcommerceAppTests.xctest */;
+			name = LaPazAppTests;
+			productName = LaPazAppTests;
+			productReference = 00E356EE1AD99517003FC87E /* LaPazAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* NikeShoesEcommerceApp */ = {
+		13B07F861A680F5B00A75B9A /* LaPazApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "NikeShoesEcommerceApp" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "LaPazApp" */;
 			buildPhases = (
 				8BE18EA13D0BD29AFC403D54 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -259,14 +259,14 @@
 			);
 			dependencies = (
 			);
-			name = NikeShoesEcommerceApp;
-			productName = NikeShoesEcommerceApp;
-			productReference = 13B07F961A680F5B00A75B9A /* NikeShoesEcommerceApp.app */;
+			name = LaPazApp;
+			productName = LaPazApp;
+			productReference = 13B07F961A680F5B00A75B9A /* LaPazApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* NikeShoesEcommerceApp-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* LaPazApp-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "NikeShoesEcommerceApp-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "LaPazApp-tvOS" */;
 			buildPhases = (
 				651966BCFB1F880079F845C9 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
@@ -279,14 +279,14 @@
 			);
 			dependencies = (
 			);
-			name = "NikeShoesEcommerceApp-tvOS";
-			productName = "NikeShoesEcommerceApp-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* NikeShoesEcommerceApp-tvOS.app */;
+			name = "LaPazApp-tvOS";
+			productName = "LaPazApp-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* LaPazApp-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* NikeShoesEcommerceApp-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* LaPazApp-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "NikeShoesEcommerceApp-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "LaPazApp-tvOSTests" */;
 			buildPhases = (
 				41C09F31749FE6B0545AF75D /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
@@ -298,9 +298,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "NikeShoesEcommerceApp-tvOSTests";
-			productName = "NikeShoesEcommerceApp-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* NikeShoesEcommerceApp-tvOSTests.xctest */;
+			name = "LaPazApp-tvOSTests";
+			productName = "LaPazApp-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* LaPazApp-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -329,7 +329,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "NikeShoesEcommerceApp" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "LaPazApp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -342,10 +342,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* NikeShoesEcommerceApp */,
-				00E356ED1AD99517003FC87E /* NikeShoesEcommerceAppTests */,
-				2D02E47A1E0B4A5D006451C7 /* NikeShoesEcommerceApp-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* NikeShoesEcommerceApp-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* LaPazApp */,
+				00E356ED1AD99517003FC87E /* LaPazAppTests */,
+				2D02E47A1E0B4A5D006451C7 /* LaPazApp-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* LaPazApp-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -424,7 +424,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NikeShoesEcommerceApp-NikeShoesEcommerceAppTests/Pods-NikeShoesEcommerceApp-NikeShoesEcommerceAppTests-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-LaPazApp-LaPazAppTests/Pods-LaPazApp-LaPazAppTests-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -433,7 +433,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NikeShoesEcommerceApp-NikeShoesEcommerceAppTests/Pods-NikeShoesEcommerceApp-NikeShoesEcommerceAppTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LaPazApp-LaPazAppTests/Pods-LaPazApp-LaPazAppTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		41C09F31749FE6B0545AF75D /* [CP] Check Pods Manifest.lock */ = {
@@ -451,7 +451,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NikeShoesEcommerceApp-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-LaPazApp-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -473,7 +473,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NikeShoesEcommerceApp-NikeShoesEcommerceAppTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-LaPazApp-LaPazAppTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -495,7 +495,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NikeShoesEcommerceApp-tvOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-LaPazApp-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -517,7 +517,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NikeShoesEcommerceApp-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-LaPazApp-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -530,7 +530,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NikeShoesEcommerceApp/Pods-NikeShoesEcommerceApp-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-LaPazApp/Pods-LaPazApp-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -539,7 +539,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NikeShoesEcommerceApp/Pods-NikeShoesEcommerceApp-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LaPazApp/Pods-LaPazApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -587,7 +587,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* NikeShoesEcommerceAppTests.m in Sources */,
+				00E356F31AD99517003FC87E /* LaPazAppTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,7 +613,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD954D1E0B4F2C00145EB5 /* NikeShoesEcommerceAppTests.m in Sources */,
+				2DCD954D1E0B4F2C00145EB5 /* LaPazAppTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,12 +622,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* NikeShoesEcommerceApp */;
+			target = 13B07F861A680F5B00A75B9A /* LaPazApp */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* NikeShoesEcommerceApp-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* LaPazApp-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -635,14 +635,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AADA0CCFB3E5D9C8B2FA22A7 /* Pods-NikeShoesEcommerceApp-NikeShoesEcommerceAppTests.debug.xcconfig */;
+			baseConfigurationReference = AADA0CCFB3E5D9C8B2FA22A7 /* Pods-LaPazApp-LaPazAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = NikeShoesEcommerceAppTests/Info.plist;
+				INFOPLIST_FILE = LaPazAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -652,17 +652,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NikeShoesEcommerceApp.app/NikeShoesEcommerceApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LaPazApp.app/LaPazApp";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E1477DE34B0FEE8F02BD266 /* Pods-NikeShoesEcommerceApp-NikeShoesEcommerceAppTests.release.xcconfig */;
+			baseConfigurationReference = 7E1477DE34B0FEE8F02BD266 /* Pods-LaPazApp-LaPazAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = NikeShoesEcommerceAppTests/Info.plist;
+				INFOPLIST_FILE = LaPazAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -672,19 +672,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NikeShoesEcommerceApp.app/NikeShoesEcommerceApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LaPazApp.app/LaPazApp";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2812913D3CB69A73FCB33A6F /* Pods-NikeShoesEcommerceApp.debug.xcconfig */;
+			baseConfigurationReference = 2812913D3CB69A73FCB33A6F /* Pods-LaPazApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = NikeShoesEcommerceApp/Info.plist;
+				INFOPLIST_FILE = LaPazApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -692,7 +692,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = NikeShoesEcommerceApp;
+				PRODUCT_NAME = LaPazApp;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -701,12 +701,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9DBDC45D5954332564858962 /* Pods-NikeShoesEcommerceApp.release.xcconfig */;
+			baseConfigurationReference = 9DBDC45D5954332564858962 /* Pods-LaPazApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = NikeShoesEcommerceApp/Info.plist;
+				INFOPLIST_FILE = LaPazApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -714,7 +714,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = NikeShoesEcommerceApp;
+				PRODUCT_NAME = LaPazApp;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -722,7 +722,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BDDA9B89AE906F2064239FDD /* Pods-NikeShoesEcommerceApp-tvOS.debug.xcconfig */;
+			baseConfigurationReference = BDDA9B89AE906F2064239FDD /* Pods-LaPazApp-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -733,14 +733,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "NikeShoesEcommerceApp-tvOS/Info.plist";
+				INFOPLIST_FILE = "LaPazApp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.NikeShoesEcommerceApp-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.LaPazApp-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -750,7 +750,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9BF40C71C7DEB98213AD4DE /* Pods-NikeShoesEcommerceApp-tvOS.release.xcconfig */;
+			baseConfigurationReference = C9BF40C71C7DEB98213AD4DE /* Pods-LaPazApp-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -761,14 +761,14 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "NikeShoesEcommerceApp-tvOS/Info.plist";
+				INFOPLIST_FILE = "LaPazApp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.NikeShoesEcommerceApp-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.LaPazApp-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -778,7 +778,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C80B39A2E07EA04DADA13D19 /* Pods-NikeShoesEcommerceApp-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = C80B39A2E07EA04DADA13D19 /* Pods-LaPazApp-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -788,24 +788,24 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "NikeShoesEcommerceApp-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "LaPazApp-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.NikeShoesEcommerceApp-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.LaPazApp-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NikeShoesEcommerceApp-tvOS.app/NikeShoesEcommerceApp-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LaPazApp-tvOS.app/LaPazApp-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC44094A1544B6247177AC92 /* Pods-NikeShoesEcommerceApp-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = CC44094A1544B6247177AC92 /* Pods-LaPazApp-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -815,17 +815,17 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "NikeShoesEcommerceApp-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "LaPazApp-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.NikeShoesEcommerceApp-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.LaPazApp-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NikeShoesEcommerceApp-tvOS.app/NikeShoesEcommerceApp-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LaPazApp-tvOS.app/LaPazApp-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -946,7 +946,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "NikeShoesEcommerceAppTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "LaPazAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -955,7 +955,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "NikeShoesEcommerceApp" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "LaPazApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -964,7 +964,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "NikeShoesEcommerceApp-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "LaPazApp-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -973,7 +973,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "NikeShoesEcommerceApp-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "LaPazApp-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -982,7 +982,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "NikeShoesEcommerceApp" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "LaPazApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

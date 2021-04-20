@@ -3,12 +3,12 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '10.0'
 
-target 'NikeShoesEcommerceApp' do
+target 'LaPazApp' do
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
 
-  target 'NikeShoesEcommerceAppTests' do
+  target 'LaPazAppTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -23,10 +23,10 @@ target 'NikeShoesEcommerceApp' do
   end
 end
 
-target 'NikeShoesEcommerceApp-tvOS' do
-  # Pods for NikeShoesEcommerceApp-tvOS
+target 'LaPazApp-tvOS' do
+  # Pods for LaPazApp-tvOS
 
-  target 'NikeShoesEcommerceApp-tvOSTests' do
+  target 'LaPazApp-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

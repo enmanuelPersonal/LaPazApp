@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 
-import { COLORS, FONTS, SIZES } from "../constants";
+import { COLORS, FONTS, SIZES, REACT_APP_API_URL } from "../../constants";
 
 export const RecentlyViewed = ({
   item,
@@ -18,7 +18,7 @@ export const RecentlyViewed = ({
     >
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         <Image
-          source={item.img}
+          source={{uri:`${REACT_APP_API_URL}uploads/${item.img}`}}
           resizeMode="contain"
           style={{
             width: 130,
@@ -34,7 +34,7 @@ export const RecentlyViewed = ({
         }}
       >
         <Text style={{ color: COLORS.gray, ...FONTS.body3 }}>{item.name}</Text>
-        <Text style={{ ...FONTS.h3 }}>{item.price}</Text>
+        <Text style={{ ...FONTS.h3 }}>{item.price} $RD</Text>
       </View>
     </TouchableOpacity>
   );

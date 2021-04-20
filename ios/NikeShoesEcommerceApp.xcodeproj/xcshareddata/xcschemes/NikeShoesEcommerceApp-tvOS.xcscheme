@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "NikeShoesEcommerceApp-tvOS.app"
-               BlueprintName = "NikeShoesEcommerceApp-tvOS"
-               ReferencedContainer = "container:NikeShoesEcommerceApp.xcodeproj">
+               BuildableName = "LaPazApp-tvOS.app"
+               BlueprintName = "LaPazApp-tvOS"
+               ReferencedContainer = "container:LaPazApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "NikeShoesEcommerceApp-tvOSTests.xctest"
-               BlueprintName = "NikeShoesEcommerceApp-tvOSTests"
-               ReferencedContainer = "container:NikeShoesEcommerceApp.xcodeproj">
+               BuildableName = "LaPazApp-tvOSTests.xctest"
+               BlueprintName = "LaPazApp-tvOSTests"
+               ReferencedContainer = "container:LaPazApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "NikeShoesEcommerceApp-tvOS.app"
-            BlueprintName = "NikeShoesEcommerceApp-tvOS"
-            ReferencedContainer = "container:NikeShoesEcommerceApp.xcodeproj">
+            BuildableName = "LaPazApp-tvOS.app"
+            BlueprintName = "LaPazApp-tvOS"
+            ReferencedContainer = "container:LaPazApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "NikeShoesEcommerceApp-tvOS.app"
-            BlueprintName = "NikeShoesEcommerceApp-tvOS"
-            ReferencedContainer = "container:NikeShoesEcommerceApp.xcodeproj">
+            BuildableName = "LaPazApp-tvOS.app"
+            BlueprintName = "LaPazApp-tvOS"
+            ReferencedContainer = "container:LaPazApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

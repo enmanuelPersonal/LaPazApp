@@ -70,7 +70,9 @@ export const ModalDetail = ({
             }}
           >
             <Image
-             source={{uri:`${REACT_APP_API_URL}uploads/${selectedItem.img}`}}
+              source={{
+                uri: `${REACT_APP_API_URL}uploads/${selectedItem.img}`,
+              }}
               resizeMode="contain"
               style={{
                 width: "90%",
@@ -84,7 +86,7 @@ export const ModalDetail = ({
               marginHorizontal: SIZES.padding,
               color: COLORS.black,
               ...FONTS.body2,
-              fontWeight: "bold"
+              fontWeight: "bold",
             }}
           >
             {selectedItem.name}
@@ -107,7 +109,7 @@ export const ModalDetail = ({
               ...FONTS.h1,
             }}
           >
-            {selectedItem.price} $RD
+            {Number.parseFloat(selectedItem.price).toFixed(2)} $RD
           </Text>
           <View style={{ flexDirection: "row" }}>
             <TouchableOpacity

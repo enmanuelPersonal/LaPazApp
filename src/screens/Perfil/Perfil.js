@@ -246,7 +246,7 @@ export const Perfil = () => {
                   <Text style={styles.textHead}>Total:</Text>
                 </View>
                 <View style={{ width: "60%" }}>
-                  <Text style={styles.textRes}>{total} $RD</Text>
+                  <Text style={styles.textRes}>{Number.parseFloat(total).toFixed(2)} $RD</Text>
                 </View>
               </View>
               <View style={{ ...styles.rowStyle }}>
@@ -277,7 +277,7 @@ export const Perfil = () => {
                     <Text>{cantidad}</Text>
                   </View>
                   <View style={{ width: "20%" }}>
-                    <Text>{precio}</Text>
+                    <Text>{Number.parseFloat(precio).toFixed(2)}</Text>
                   </View>
                 </View>
               ))}

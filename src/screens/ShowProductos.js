@@ -65,7 +65,7 @@ export default function ShowProductos({
           <Text style={{ color: COLORS.black, ...FONTS.body3 }}>
             {item.name}
           </Text>
-          <Text style={{ ...FONTS.h3 }}>{item.price} $RD</Text>
+          <Text style={{ ...FONTS.h3 }}>{Number.parseFloat(item.price).toFixed(2)} $RD</Text>
         </View>
       </TouchableOpacity>
     </View>

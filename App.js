@@ -10,7 +10,7 @@ import AppContext from "./src/auth/AuthContext";
 import reducer from "./src/auth/authReducer";
 import { post } from "./src/helpers/fetch";
 import { USER_LOGIN } from "./src/auth/actions";
-import { version } from "./src/helpers/version";
+// import { version } from "./src/helpers/version";
 import { ShowAlert } from "./src/components/Alert";
 import { formatDate } from "./src/helpers/formatDate";
 
@@ -54,20 +54,20 @@ const App = () => {
       setLoading(false);
     };
 
-    const fetchVersion = async () => {
-      const { value, fecha } = await version();
+    // const fetchVersion = async () => {
+    //   const { value, fecha } = await version();
 
-      if (!value) {
-        ShowAlert({
-          title: "Nueva version",
-          msj: `Se ha detectado una nueva version de la app el ${formatDate(
-            fecha
-          )}, favor actualizar!`,
-        });
-      }
-    };
+    //   if (!value) {
+    //     ShowAlert({
+    //       title: "Nueva version",
+    //       msj: `Se ha detectado una nueva version de la app el ${formatDate(
+    //         fecha
+    //       )}, favor actualizar!`,
+    //     });
+    //   }
+    // };
 
-    fetchVersion();
+    // fetchVersion();
     fetchAuthData();
   }, []);
 

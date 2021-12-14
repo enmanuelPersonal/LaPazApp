@@ -157,9 +157,9 @@ export const Carrito = () => {
           <PagoStripe
             setDialog={setShowPayment}
             visible={showPayment}
-            monto={subTotal}
+            monto={Number.parseFloat(subTotal).toFixed(2)}
             title="Pagar su compra"
-            subTitulo={`Monto a Pagar: ${subTotal} $RD`}
+            subTitulo={`Monto a Pagar: ${Number.parseFloat(subTotal).toFixed(2)} $RD`}
             handleSave={handleSave}
             description={`Pago de compra de productos del cliente`}
           />

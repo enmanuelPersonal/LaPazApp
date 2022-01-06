@@ -122,7 +122,7 @@ export const Carrito = () => {
               ...FONTS.largeTitleBold,
             }}
           >
-            Sub Total: <Text style={{ fontSize: 25 }}> ${subTotal}</Text>
+            Sub Total: <Text style={{ fontSize: 25 }}> ${Number.parseFloat(subTotal).toFixed(2)}</Text>
           </Text>
         </View>
         <View>
